@@ -29,11 +29,18 @@ https://www.abs.gov.au/statistics/people/population/population-census/2021
 # Timeline
 
 Tuesday * - task
+
 Thursday * - task
+
 Monday * - task
+
 Tuesday * - task
+
 Thursday * - task
+
 Monday * - task
+
 Tuesday * - task
+
 Thursday * - task
 
