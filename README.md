@@ -1,6 +1,7 @@
 ## Australian_Energy_Insights
 
 UWA Data Analytics Bootcamp Final Project
+
 Presented by Morgan & Carly
 
 
@@ -22,7 +23,9 @@ Some visualisations presented from our analysis are below:
 # Data Sources:
 
 https://www.energy.gov.au/data
+
 https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/income-and-work-census/latest-release
+
 https://www.abs.gov.au/statistics/people/population/population-census/2021
 
 
@@ -44,3 +47,23 @@ Tuesday * - task
 
 Thursday * - task
 
+
+# Project Requirements
+
+* Find a project worth solving, analyzing or visualizing
+
+* Use machnie learningwth the technologies we've learned
+
+* UseScikit-learn and/or another machine learning library.
+
+* Use at least TWO of the following:
+
+Python Pandas, Python Matplotlib, HTML/CSS/Bootstrap, Javascript Plotly, Javascript Leaflet, Tableau, SQL Database, MongoDB Database, Google Cloud SQL, Amazon AWS.
+
+* Host your application using Heroku or a tool of your choice.
+
+
+# Project Requirements
+
+The project will be graded on the following 5 categories:
+* Data & data delivery, back end ETL, Visualizations, group presentations, slide deck.
