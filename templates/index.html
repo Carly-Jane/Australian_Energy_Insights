@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Australian Energy Production</title>
+
+    <!-- Bring in our bootstrap stylesheets -->
+    <!-- Local css stylesheet  -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <!-- Includes expand settings for small vs large screens -->
+    <!-- Small screens display a drop down box to display navigation options -->
+    <!-- Large screens display all navigation options individually along the nav bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">The Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insight1.html">Insight 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insight2.html">Insight 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insight3.html">Insight 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insight4.html">Insight 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insight5.html">Insight 5</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insight6.html">Insight 6</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- COMPLETE - NAV BAR -->
+
+
+    <!-- GRID / PAGE LAYOUT -->
+
+    <div class="container">
+
+        <!-- Row 1 -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>
+                    <center> <br> {{ Title }} <br><br> </center>
+                </h1>
+                <h2>
+                    <center> <br> {{ Dashboard_Overview }} <br><br> </center>
+                </h2>
+
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row row-cols-1 row-cols-md-12 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Visualisation 1</h5>
+                        <p class="card-text"><br><br>Which state has the highest population? Which state has the lowest?
+                            <br><br>
+
+                        <div id="plot"></div>
+
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">card foot text</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Visualisation 2</h5>
+                        <p class="card-text"><br><br>Which state has the highest median income? Which state has the
+                            lowest?<br><br>
+                        <div id="income_plot"></div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">card foot text</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Visualisation 3</h5>
+                        <p class="card-text"><br><br>Which state produces the most energy per capita? which state
+                            produces the
+                            least? Divided into renewable vs non renewable.<br><br>
+                        <div id="per_capita_plot"></div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">card foot text</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <br>
+
+        <div class="row">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Visualisation 5</h5>
+                        <p class="card-text"><br><br>Do states with a higher population have a higher percentage of
+                            renewable energy
+                            production? State population vs the % of energy productions that is renewable.<br><br>
+
+                        <div id="population_vs_renewable_energy_plot"></div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">card foot text</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW ROW  -->
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Visualisation 6</h5>
+                            <p class="card-text"><br>Do states with a higher median income have a higher percentage of
+                                renewable energy
+                                production? State median income vs the % of energy productions that is
+                                renewable.<br><br><br><br>
+                            <div id="income_vs_renewable_energy_plot"></div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">card foot text</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <!-- Row -->
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Visualisation 4 - INTERACTIVE MAP</h5>
+                            <p class="card-text"><br><br>
+
+                                * INTERACTIVE MAP - locations of power plants with icons that indicate renewable energy
+                                plans and non
+                                renewable energy plants
+
+                                Maybe a visualisation that shows each state renewables growth? Ie, a double bar graph,
+                                showing the amount
+                                of renewable plants in WA in 2013 next to the amount of renewable plants in WA in 2020
+                                Using Dataframes 14/15, 17/18 & 20/21.
+
+                            <div id="energy_progression_plot"></div>
+
+                            <br><br>
+                            </p>
+                            <p class="card-footer"><small class="text-muted">card foot text</small></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPLETE - GRID / PAGE LAYOUT -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                <script src="https://d3js.org/d3.v5.min.js"></script>
+                <script src="population_plot.js"></script>
+                <script src="plots.js"></script>
+                <script src="../JSON_data/Aus_Population.json"></script>
+</body>
+
+<!-- PAGE FOOTER -->
+<footer>
+    <div class="container">
+
+        <!-- Row 1 -->
+        <div class="row">
+            <div class="col-md-12">
+                <center>
+                    <br><br>
+
+                    <a href="https://github.com/MorganMaciupa " class="link">See more work from Morgan at her Git
+                        Hub</a><br>
+                    <a href="https://github.com/Carly-Jane" class="link">See more work from Carly at her Git Hub</a><br>
+
+                    <br>
+                </center>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- COMPLETE - PAGE FOOTER -->
+
+</html>
