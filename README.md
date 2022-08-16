@@ -31,9 +31,16 @@ https://www.abs.gov.au/statistics/people/population/population-census/2021
 
 # Timeline
 
-Tuesday * - task
+ALL SIMPLE VISUALISATIONS IN TABLO
+FOCUS ON FLASK APP
+MACHINE LEARNING GRAPH PREDICTIONS
+Put latitude and longitude dataframes to the side
 
-Thursday * - task
+
+Thursday 18/8 - 
+api flask app (Morgan)
+tableau visualisations (Carly)
+re-write connections in new file structure (Carly)
 
 Monday * - task
 
