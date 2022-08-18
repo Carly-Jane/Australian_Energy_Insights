@@ -1,0 +1,1359 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20222.22.0624.2136                               -->
+<workbook original-version='18.1' source-build='2022.2.0 (20222.22.0624.2136)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='energy_production_per_capita' inline='true' name='federated.149jk4o16urcxf1c6133a0f2lfjt' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='energy_production_per_capita' name='textscan.1oszw1e0epq4s318e22ho0tvpzz1'>
+            <connection class='textscan' directory='C:/Users/carly/Desktop/Australian_Energy_Insights/export_data' filename='energy_production_per_capita.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='State' ordinal='1' />
+            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
+            <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='State' ordinal='1' />
+            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
+            <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Renewable_MWh_Per_Capita</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Renewable_MWh_Per_Capita]</local-name>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias>Renewable_MWh_Per_Capita</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Non_Renewable_MWh_Per_Capita</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Non_Renewable_MWh_Per_Capita]</local-name>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias>Non_Renewable_MWh_Per_Capita</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Non Renewable MWh Per Capita' datatype='real' name='[Non_Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+      <column caption='Renewable MWh Per Capita' datatype='real' name='[Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='energy_production_per_capita.csv' datatype='table' name='[__tableau_internal_object_id__].[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]' role='measure' type='quantitative' />
+      <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Non_Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Non_Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#6ad400'>
+              <bucket>&quot;[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Renewable_MWh_Per_Capita:qk]&quot;</bucket>
+            </map>
+            <map to='#6b3d15'>
+              <bucket>&quot;[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Non_Renewable_MWh_Per_Capita:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:State:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;QLD&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;VIC&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;NSW&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;TAS&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;WA&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;SA&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;NT&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;ACT&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='energy_production_per_capita.csv' id='energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C'>
+            <properties context=''>
+              <relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='State' ordinal='1' />
+                  <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
+                  <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='energy_progression_merged' inline='true' name='federated.0nb3ll21mesihm131u1of13fz45f' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='energy_progression_merged' name='textscan.0sg6ms21a2kgon0zwlad00zhsdjv'>
+            <connection class='textscan' directory='C:/Users/carly/Desktop/Australian_Energy_Insights/export_data' filename='energy_progression_merged.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='integer' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Renewable Energy Plants 2014 2015]' />
+            <value name='[Renewable Energy Plants 2017 2018]' />
+            <value name='[Renewable Energy Plants 2020 2021]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2014_2015]' />
+              <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2017_2018]' />
+              <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2020_2021]' />
+            </group>
+          </groups>
+          <relation connection='textscan.0sg6ms21a2kgon0zwlad00zhsdjv' name='energy_progression_merged.csv' table='[energy_progression_merged#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='State' ordinal='1' />
+              <column datatype='integer' name='Renewable_Energy_Plants_2014_2015' ordinal='2' />
+              <column datatype='real' name='Non_Renewable_Energy_Plants_2014_2015' ordinal='3' />
+              <column datatype='integer' name='Renewable_Energy_Plants_2017_2018' ordinal='4' />
+              <column datatype='real' name='Non_Renewable_Energy_Plants_2017_2018' ordinal='5' />
+              <column datatype='integer' name='Renewable_Energy_Plants_2020_2021' ordinal='6' />
+              <column datatype='real' name='Non_Renewable_Energy_Plants_2020_2021' ordinal='7' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='integer' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Renewable Energy Plants 2014 2015]' />
+            <value name='[Renewable Energy Plants 2017 2018]' />
+            <value name='[Renewable Energy Plants 2020 2021]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2014_2015]' />
+              <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2017_2018]' />
+              <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2020_2021]' />
+            </group>
+          </groups>
+          <relation connection='textscan.0sg6ms21a2kgon0zwlad00zhsdjv' name='energy_progression_merged.csv' table='[energy_progression_merged#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='State' ordinal='1' />
+              <column datatype='integer' name='Renewable_Energy_Plants_2014_2015' ordinal='2' />
+              <column datatype='real' name='Non_Renewable_Energy_Plants_2014_2015' ordinal='3' />
+              <column datatype='integer' name='Renewable_Energy_Plants_2017_2018' ordinal='4' />
+              <column datatype='real' name='Non_Renewable_Energy_Plants_2017_2018' ordinal='5' />
+              <column datatype='integer' name='Renewable_Energy_Plants_2020_2021' ordinal='6' />
+              <column datatype='real' name='Non_Renewable_Energy_Plants_2020_2021' ordinal='7' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[energy_progression_merged.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[energy_progression_merged.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[energy_progression_merged.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Non_Renewable_Energy_Plants_2014_2015</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Non_Renewable_Energy_Plants_2014_2015]</local-name>
+            <parent-name>[energy_progression_merged.csv]</parent-name>
+            <remote-alias>Non_Renewable_Energy_Plants_2014_2015</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Non_Renewable_Energy_Plants_2017_2018</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Non_Renewable_Energy_Plants_2017_2018]</local-name>
+            <parent-name>[energy_progression_merged.csv]</parent-name>
+            <remote-alias>Non_Renewable_Energy_Plants_2017_2018</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Non_Renewable_Energy_Plants_2020_2021</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Non_Renewable_Energy_Plants_2020_2021]</local-name>
+            <parent-name>[energy_progression_merged.csv]</parent-name>
+            <remote-alias>Non_Renewable_Energy_Plants_2020_2021</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Non Renewable Energy Plants 2014 2015' datatype='real' name='[Non_Renewable_Energy_Plants_2014_2015]' role='measure' type='quantitative' />
+      <column caption='Non Renewable Energy Plants 2017 2018' datatype='real' name='[Non_Renewable_Energy_Plants_2017_2018]' role='measure' type='quantitative' />
+      <column caption='Non Renewable Energy Plants 2020 2021' datatype='real' name='[Non_Renewable_Energy_Plants_2020_2021]' role='measure' type='quantitative' />
+      <column caption='Renewable Energy Plant Year - Split 1' datatype='string' name='[Pivot Field Names - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0nb3ll21mesihm131u1of13fz45f].[Pivot Field Names]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( SPLIT( SPLIT( [Pivot Field Names], &quot;Renewable&quot;, 2 ), &quot;Energy&quot;, 2 ), &quot;Plants&quot;, 2 ) )' />
+      </column>
+      <column caption='Renewable Energy Plant Year' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='Num of Energy Plants' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='energy_progression_merged.csv' datatype='table' name='[__tableau_internal_object_id__].[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]' role='measure' type='quantitative' />
+      <column-instance column='[Non_Renewable_Energy_Plants_2014_2015]' derivation='Sum' name='[sum:Non_Renewable_Energy_Plants_2014_2015:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Non_Renewable_Energy_Plants_2017_2018]' derivation='Sum' name='[sum:Non_Renewable_Energy_Plants_2017_2018:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Non_Renewable_Energy_Plants_2020_2021]' derivation='Sum' name='[sum:Non_Renewable_Energy_Plants_2020_2021:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[sum:Non_Renewable_Energy_Plants_2014_2015:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[attr:Renewable_Energy_Plants_2014_2015:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[none:Renewable_Energy_Plants_2014_2015:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[sum:Renewable_Energy_Plants_2014_2015:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[none:Renewable_Energy_Plants_2020_2021:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[sum:Renewable_Energy_Plants_2020_2021:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[sum:Non_Renewable_Energy_Plants_2020_2021:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[attr:Renewable_Energy_Plants_2017_2018:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[none:Renewable_Energy_Plants_2017_2018:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[sum:Renewable_Energy_Plants_2017_2018:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0nb3ll21mesihm131u1of13fz45f].[sum:Non_Renewable_Energy_Plants_2017_2018:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='energy_progression_merged.csv' id='energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='integer' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[Renewable Energy Plants 2014 2015]' />
+                  <value name='[Renewable Energy Plants 2017 2018]' />
+                  <value name='[Renewable Energy Plants 2020 2021]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2014_2015]' />
+                    <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2017_2018]' />
+                    <field name='[energy_progression_merged.csv].[Renewable_Energy_Plants_2020_2021]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.0sg6ms21a2kgon0zwlad00zhsdjv' name='energy_progression_merged.csv' table='[energy_progression_merged#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                    <column datatype='integer' name='F1' ordinal='0' />
+                    <column datatype='string' name='State' ordinal='1' />
+                    <column datatype='integer' name='Renewable_Energy_Plants_2014_2015' ordinal='2' />
+                    <column datatype='real' name='Non_Renewable_Energy_Plants_2014_2015' ordinal='3' />
+                    <column datatype='integer' name='Renewable_Energy_Plants_2017_2018' ordinal='4' />
+                    <column datatype='real' name='Non_Renewable_Energy_Plants_2017_2018' ordinal='5' />
+                    <column datatype='integer' name='Renewable_Energy_Plants_2020_2021' ordinal='6' />
+                    <column datatype='real' name='Non_Renewable_Energy_Plants_2020_2021' ordinal='7' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Non-Renewables Box Plot'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='energy_production_per_capita' name='federated.149jk4o16urcxf1c6133a0f2lfjt' />
+          </datasources>
+          <datasource-dependencies datasource='federated.149jk4o16urcxf1c6133a0f2lfjt'>
+            <column caption='Non Renewable MWh Per Capita' datatype='real' name='[Non_Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Non_Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Non_Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='369' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[none:State:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Non_Renewable_MWh_Per_Capita:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Non_Renewable_MWh_Per_Capita:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Non_Renewable_MWh_Per_Capita:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{D2197FE6-E12A-495D-AF3A-4E153ACC6460}' />
+    </worksheet>
+    <worksheet name='Renewable Energy Plants Progression'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='energy_progression_merged' name='federated.0nb3ll21mesihm131u1of13fz45f' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nb3ll21mesihm131u1of13fz45f'>
+            <column caption='Renewable Energy Plant Year - Split 1' datatype='string' name='[Pivot Field Names - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0nb3ll21mesihm131u1of13fz45f].[Pivot Field Names]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( SPLIT( SPLIT( [Pivot Field Names], &quot;Renewable&quot;, 2 ), &quot;Energy&quot;, 2 ), &quot;Plants&quot;, 2 ) )' />
+            </column>
+            <column caption='Renewable Energy Plant Year' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+            <column caption='Num of Energy Plants' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[Pivot Field Names - Split 1]' derivation='None' name='[none:Pivot Field Names - Split 1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0nb3ll21mesihm131u1of13fz45f].[none:Pivot Field Names - Split 1:nk]' value='323' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.0nb3ll21mesihm131u1of13fz45f].[none:State:nk]' />
+              <text column='[federated.0nb3ll21mesihm131u1of13fz45f].[none:State:nk]' />
+              <lod column='[federated.0nb3ll21mesihm131u1of13fz45f].[none:State:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0nb3ll21mesihm131u1of13fz45f].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.0nb3ll21mesihm131u1of13fz45f].[none:Pivot Field Names - Split 1:nk]</cols>
+      </table>
+      <simple-id uuid='{7CE4206C-ACCE-4CAA-B8C8-087B570D597B}' />
+    </worksheet>
+    <worksheet name='Renewables On Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='energy_production_per_capita' name='federated.149jk4o16urcxf1c6133a0f2lfjt' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.149jk4o16urcxf1c6133a0f2lfjt'>
+            <column caption='Renewable MWh Per Capita' datatype='real' name='[Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Renewable_MWh_Per_Capita:qk]' num-steps='37' palette='tableau-map-temperatur' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <encodings>
+              <color column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Renewable_MWh_Per_Capita:qk]' />
+              <lod column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[none:State:nk]' />
+              <geometry column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.149jk4o16urcxf1c6133a0f2lfjt].[Latitude (generated)]</rows>
+        <cols>[federated.149jk4o16urcxf1c6133a0f2lfjt].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{6AF0C3A8-4A2B-4370-92DC-75E7B5830239}' />
+    </worksheet>
+    <worksheet name='States Energy Production'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='energy_production_per_capita' name='federated.149jk4o16urcxf1c6133a0f2lfjt' />
+          </datasources>
+          <datasource-dependencies datasource='federated.149jk4o16urcxf1c6133a0f2lfjt'>
+            <column caption='Non Renewable MWh Per Capita' datatype='real' name='[Non_Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+            <column caption='Renewable MWh Per Capita' datatype='real' name='[Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Non_Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Non_Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Non_Renewable_MWh_Per_Capita:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Renewable_MWh_Per_Capita:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[none:State:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;QLD&quot;</bucket>
+              <bucket>&quot;NT&quot;</bucket>
+              <bucket>&quot;WA&quot;</bucket>
+              <bucket>&quot;NSW&quot;</bucket>
+              <bucket>&quot;VIC&quot;</bucket>
+              <bucket>&quot;SA&quot;</bucket>
+              <bucket>&quot;TAS&quot;</bucket>
+              <bucket>&quot;ACT&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]' value='155' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.149jk4o16urcxf1c6133a0f2lfjt].[Multiple Values]</rows>
+        <cols>([federated.149jk4o16urcxf1c6133a0f2lfjt].[none:State:nk] / [federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{3BB78EBB-DB1A-482F-A8D9-D88F3E1062ED}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' name='States Energy Production'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]</field>
+            <field>[federated.149jk4o16urcxf1c6133a0f2lfjt].[none:State:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8F00763D-6D1B-4185-BEEE-35D4D56CD866}' />
+    </window>
+    <window class='worksheet' name='Renewables On Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Renewable_MWh_Per_Capita:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.149jk4o16urcxf1c6133a0f2lfjt].[none:State:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{30C94F5E-C95C-4C84-9A0F-327E27E1B79D}' />
+    </window>
+    <window class='worksheet' name='Non-Renewables Box Plot'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.149jk4o16urcxf1c6133a0f2lfjt].[none:State:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.149jk4o16urcxf1c6133a0f2lfjt].[none:State:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{FF7458AF-9D3A-4855-B092-C05080557FE3}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Renewable Energy Plants Progression'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0nb3ll21mesihm131u1of13fz45f].[none:State:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nb3ll21mesihm131u1of13fz45f].[:Measure Names]</field>
+            <field>[federated.0nb3ll21mesihm131u1of13fz45f].[none:Pivot Field Names - Split 1:nk]</field>
+            <field>[federated.0nb3ll21mesihm131u1of13fz45f].[none:Renewable_Energy_Plants_2014_2015:qk]</field>
+            <field>[federated.0nb3ll21mesihm131u1of13fz45f].[none:Renewable_Energy_Plants_2017_2018:qk]</field>
+            <field>[federated.0nb3ll21mesihm131u1of13fz45f].[none:Renewable_Energy_Plants_2020_2021:qk]</field>
+            <field>[federated.0nb3ll21mesihm131u1of13fz45f].[none:State:nk]</field>
+            <field>[federated.0nb3ll21mesihm131u1of13fz45f].[sum:Non_Renewable_Energy_Plants_2014_2015:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{49709C69-14C6-4D73-A8F9-9E5667377E3F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Non-Renewables Box Plot' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Renewable Energy Plants Progression' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Renewables On Map' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO2d6XNc15mfn3OX3hdsBMAF4AZSFEVKoihRq0fy2JI9HpU8cWTH4zgzWSqT
+      yVRqqvIhH1KVvyCpuObDVGYqqZqZTOx4ZCsZjyLLlldZomyJpEiKlECCG0gQALEvvXff5eQD
+      eJvdzQbQALrRC+5TBYndfZdzzz2/875ne49IJBJS0zTWQy6Xw7IsLMvCtm0sy0JKWXSMEALL
+      slBVNf9duWOEEABYlgVQdLxzDEA4HEZRlHWl1+Uetm1j2zapVApFUQgGg/k83iwsy8IwDKSU
+      2LaNYRjYtn1f+XAoLUvLHedc2ynXUsqiMuacJ6VE0zQNr9e7rgfweDz33TSZTJJOp/PfKYqS
+      T7SqqpimiZQy/9CmaaIoSv5aUkp0Xc8n0inszkPYto3P5yt6EOf6hQ/Z7BTmkWEYGIaB3+9H
+      13WA+yqVla5TLk8syyKVSmFZFl6vF4/Hs2kVi5SSVCpFMpnEtm0ANE1DUZT855XOFUKsWPid
+      65mmmS9XQgicsp5Op/PlcH1V/11KM1bTNCKRCMFg8N4NNC3/ohwFm6aJaZrE43H8fj+GYZBI
+      JAiFQkgpMU2zSOXOH0AikSCTyRRZDNu20TSNYDCI1+ttGREkEom8lfV6vUUFtJLCD5DNZosq
+      mEIMw8Dn8xEKhTbVqpqmSTKZLCrEK9X8pTjHrSYEXdcxTZNt27YhhEBRlHxepNNpDMPYmADK
+      4ShtObeq8LdAIEA2myWVSuWtgW3beQtQWpCdBzYMo+g35zvTNPPn2radT0uh6SsnDud4x2wW
+      Wh3nvqXHl/u+HM61FUW5L82lxzm/O/8PhUJFv5UW0sLnLFeApZTLCkVKSSAQQNf1TS38Usqi
+      mh+WrLxTYztpUVU1716Xu0Y5Sj0AIUQ+Dx3L6fxb07SNW4CNoigKPp8Pj8eDruvYto2qqnkx
+      OP92anlYeiiPx5O3FKW1wdzcXN7SCCEIBAIEg0GklGSzWUzTxOfzFfmHuVwO0zRJpVL59DjX
+      U1X1PhEZhpF/MY6FK+d+OZYrm83mn00IgWmaeL3evA+cTqdRFAVVVWlra7vP/XOu5dSSjpik
+      lPnnLPVxnc+FL740bZvp9jg4Lp2TVqfC8Xg8RCKRonzKZrPE4/GybUsH5zkLvQynEtV1nUAg
+      UPYZnfPqKgAnIaqqEolEgGJ1l5rIwhraKbipVArDMFAUBa/Xi9frJZPJkMlk8uc5hXZxcTF/
+      XY/Hk28ASikJhUL5THfOBYhGo/nzVVUllUqRTqeLBKnrOsFgEF3XyWQySCnz7ZR4PI6UMu+a
+      ZTKZfIPT8VGdGslJb6EonPyxbZtkMomiKITDYfx+/7KuTSWWaTlh1BohBJ2dnXnxFlYepen2
+      +Xyoqsri4iKGYZS9XqmLrKpqvoKrxKUSmUxGrrcR3CgUNhQDgQBCCHK5XF75iqKQyWRIJpMI
+      IYhEIsRisXymOpZI1/V8T4RlWXg8HjRNw+fzYZomAAsLCyvWRk4N7dSuzgspbcyXsxbZbJaZ
+      mRmSySS6rufv63QeOBaiHj029cKp6BYWFoo8g9UIBoOEQqFVj627BagGToErbPE7bgzc61ly
+      GntO7eD87tS0Qoh84Sr8zjnGtm06OjryBd1xw0zTLHLNnB4vJy2lfmkpzkuem5vLp89x4xRF
+      we/35y1MK/V0VYKTr6FQiHg8XvF5jlew6vVbwQKsFcf8OgXM+dvMguVYkWw2Sy6Xw7Ztbty4
+      gc/nw+/34/P5CIfD6LpeJOatipSSRCJBLBbD5/MVtf1SqVS+8tE0Db/fj9frzbtXK9ESFmCt
+      rNZT5VBYwxfiuDfrLZROjX/z5k2AvFUJBoP09/fne2bcAb97OD06Tq+Og21ZzM5M09XVxZnT
+      pzh+/HECwWDl192KFqBSnF6lwl4oWGqcBYPBot6htVzT6d3QNI1sNpu/htfrJRKJuAV/jSQS
+      CYLBYL4HqZB0Oo3f71/2XFcAq+A0ri3LynejwlKN5PTGrEUEtm0Tj8eLRssB/H6/O81jnRS6
+      k5ZlEQwGyeVyRT2GUL795eb2Kjh9yeFwmPb29qJpGIlEgmw2W/G1CuegFOIW/vVjGAaTE3eA
+      pXeVy+UAisY4nO/K4eb4GlBVlWg0mh9BLZybUwm2bZPJZDBNE03TCIfDdHR0uIV/A6SSCU69
+      83MWFxdRFCU/nlTIStNj1uQCLTeVYKuxkkl1ephKG9iFI7mF3awuGyOTyWAYRr5xvNY8XVO1
+      476wJVbqiy83SOaMJDsjz5V0z7lUhpQ23/ub/8HVocuMjY6u+XzX7lYZZyCrENM08zMvm8HV
+      cdYKFM61Wi8bPX81PB4vjxx/ggv/8LdMjo+u+X6N/zZagMK5QvXENM38xLJClwyWGpOjo7cZ
+      vT3CT9/4AbOzs1y7dnVD95NScvHCx9VI+rKk02kW33+DfpEk9qvXmZ+fX9P5W3IgbCsipeQ3
+      7/yC+O3rDDz9AsmZKe5cuoAnGOaFr32Tt9/6ITMXz5DLpJGazsCRo/i9vg3dc+jyJSLhcJWe
+      oDyGkUO3c+gqBG2DuclxOjo6Kj7fFcAWYXZmhon3fowqbT4eHqJfl3QJmMXD4sI8L33xd3gn
+      m0LxerFmJ7n+0zeQs3fw/OGfMjM/z6EHD1dswVKpFPFYDCEEu/fuq2nnycz4KH5lyYppAlLz
+      s2s63xXAFkBKybmT75BAQ7ENer0KCJO4J8Thr/whHZ1dCCF4/pWvoOk6H585Tfwnf0dAgctv
+      vsa0r51gIMDc2AhHnnw2PxbikMvl8uKILS5y/vw5otE22js6SCaTBNcwNWGtzzV77RO8d7Ul
+      BJiZVL6buRLckeAtQjwWw+P1EltcBCG4deEsOx88Sk9v730LbyzL4mf/5T/Rad9dUyElCQtU
+      X4BMsI2dn/kCBw4+wK2rQ7T19AKCrq4uLn96kV+/9x6/+4/+MbHYImfPnOHVr/2T/CzWajM9
+      NcmZ7/4FvcZc/ruEvxOx6wEe/uyXCAQCqwrBFcAWRErJpx+fZ/jiOfY89DADDz5EKhHH5w9w
+      /tQHzF86T9v8GF5xf4+KLSXzJiiqRkhYDNoBXvj6P+fSL39EdnKUXc++yELGYOzKID3JKfzH
+      X+CJZ54lEm2r6jNYlsW73/4L0revsL2kqZIdeIoTr3y9oqnjrgC2GIsLCwxfGeL26ffomr9N
+      VipkEPixyak6UTu35tp60ZQEFIEmJClbsNg7wN5Hj5P4yWskLIg8/RJPvfSlqj7H+O0Rhr/7
+      Xwko9y+Qnw/2cviVf0bPjl2rPovbDbqFmJqa4u03/p7BN19jYWIMTQiCiqRTsQko0CaNigp/
+      4RJEgKgm0JWlQhhUoWPyKvG3X0MDUtsHePyzL1b9WYxshmT3Aewy3f7tyQkGf/J/MYzl5wA5
+      uALYIti2ze2hQcI3ztOlWBzybXyAarlBJ58i8CgwrIR44ne+jFaD8Y/evt1o0qJQr4XiTc9N
+      MXlnYtWBMVcAW4RLZ08Te++HdOmCdn39DdLCArX8dBBIWpCV4K9RD9CVsx8SnbnOck/SZcWZ
+      HR1e9TpuN+gWIWPaqELABiv+Ql+7XP++JSU39XZkdx97+vvXNCi1FqK9OxmzwbfMmnePArlU
+      YtXruAJocaSUXBu6jE9I0ra5+gkVsFI7IWarHPz8y0gJjx47VpX7lWP25lU8Bf5LOTFmxq6v
+      OgjnCqDBcaLKAfkAXoFAoOLzpZRce+v7tKXm8gNGtUToOkY2i2UYXBocJJvJsGffPjo7O6t2
+      D9M0Wfj0FG1lnqfQQqmB1adhuAJoQJzp04oQDA0N0dHZyfjYKDPDQ9gTV9j+9Mvs6t9NV3fP
+      qteam53Fn4mhbdLs66iVITlxG0/XdoZ/9WPSiRjhwNeqKoBcLotILazagrWSMYxcDq9v+TlN
+      rgAaECd+pmWZ/OInP2Z3VxhL88H4JfZ6Utjvf4dPTrfx0O/9Edu271z2OqMjI1x483t02ibL
+      tharTMyCxz/7BaJtbZwbOs0dpY3uHbuqeg+/P4B371G4dW7F47wzw0yOj9K/b4CZmZl8uJTC
+      0WG3F6hBcEKwzMzMkEql+M07PyWdzrBDxOmYG2LbxFkOeNPoisCrwjZrgas/+Avm55af/DVy
+      8qd0zd1G2aTCb0pJ6MkXiba1kc1kEIdPEOrdyZVPL1b1PkIItOD9Sx9Luzx1IZm9eRXbtjn7
+      ztt89Npfcunc6aLjXAvQQNy4fp3Bj89iWhaT1wexc1m6ZYx2vXzM/IgZ5/z/+1uefPWPysbC
+      Cfbt49a1S3QKA88mqCC18wGe//wXEULg8/s59uxv1eQ+UkpSEyOUSqA0ujZSkrnwDu+PXadt
+      8joeYTM76GGsZwc923csxV+qSQpd1oRTI3X3dJMaGWTP5CmeDCXovPMRHZ7lN4wQArbFhjn1
+      nT9jfGyMm9eGiC0u5mObHn7qOdT9R1isTufPisS0AEe+8GWUTVrqqUc7ioLqluvpEULgtzKE
+      p67iEUv5GJ2+ytDrf8n0nfGlWaObklqXFcnlcoyOjpKIx6F9B9nFRdo8An8FnfZCCKSi8cH7
+      7yKu/YaekJfbdpRAdz8BI8X0+B12bULtr9gmtpRMTU/R27u9pvcSQhDtGyA7/NG6BNdhJ7n+
+      3W8xfuJLrgWoN9lsllhskfjiAu/+4NuosSmmc5Xt/uJwZWyK8M0PGAhDVMmhL94hefkcoduX
+      CORSRNZ2uXURsnNc+etvcfPU+8uGMq8mHo+37DygQkrnLBUSVGzsem+QsdVJpVKcfO9dLn50
+      inY7ji009otZ/KG11WoRTZIwKaoN93slINir1b4wOgSEjX3hJCdvX2Pfi7/H7oOHanIfKSXj
+      Z98lug7Llh8nEIJMbMEVwGZh2zaWaaIXbGgRCATYu7uf7Pkfszssmc0pTKQlu0NUbNptKdnt
+      N++OitY/1IoiILQwwY0fvsblK8fo3dVPPLbIU08/U7VJcYsLCzBzG5axbOW2n3LIN5QBr6a6
+      LtBmoShKUeF3WJybQVcEKRO6vTZ7QmJNxVgRgqhH4N+ska4KCaXmERdOMnjq12QW5xkfH6va
+      tafHRwkp9+8dVimOCNIjQ64F2EwymQwLCwv4fF6i0TZmZqbp6dvLOTrYqc0ArRV8rF3mUCav
+      YU3f5HZ6kY6OTkJViBJhpJMr1tyV5qGemncFsFlIKclkMrx/8j1mr56n9/AJdvftQubS9Ksx
+      BEs++0ZRFIW12ZDaElVsIIe8co5Tt67g2/sgRz7/MpG2+5dILhdWspRcIlaVtHllzhXAZjA3
+      O8Pp999lzwMPEY1GiRkpEh//nMVhD5fNdjzJHElNsjsIvgZzZaqFEBDOJZGXT/NxfJEn/+m/
+      vm+DP9M0uf7px8yOj/Lo8y+WjSZh2zaLQ2eJVsFSZm3htgFqjWVZXHjrfxMiS19fHwvz8+wJ
+      CR7pEHRqBo/rkxzvkDwQVapS+G3bRm500n8NEULgGbvCD//6vzE3M10Une7C+7/k+i9+wLZ9
+      B5cNyzg7NYkan65KOgKquyi+pmQyGd79P/+TwNRlNAH7v/Ef6dq2jUtnfs3IL75HX20WSzE0
+      a9Kn1TcM40rYUnLHtOgMecn5Ivjau+l86Amk7mf3nj347073LvXlDcPg1Hf+nODszaqlxXWB
+      akQul+OD7/13onPXCelLywRvfvhTIi+9yu3bI/g0BVh+msNGaBYnKixMyM7BxByJ8UvE9p5A
+      VRXiC/Mcf+qZ+46/9sl5/DM3q/qArgBqxNWzvyE6fw2P5kzQAobPcObULjyjF9BEbQp/s6Ip
+      AmVqmI7Ol+jfs7fsMYk7I2xgOfN9SCndNkCtSE2N4FGL35ZfWMx+8CZ+K0X7/UMCVaNxWwAr
+      E01NM/g//zNXP3y3aE9g27a5eeUS2Wsrz/9fD64FqBF6tPu+74QQ7PFlqbWTUu2rF244XpXr
+      seQSlrtPBIPc6R/y0Zmf0Xb8c6CoJIYH0aeuE6pBde0KoEYIX4iMLfApxW9a3YSBrmpbgMJ1
+      ttVAFvy3HKqANrLIM28hBISgZku3XBeoRux98AiJSH99bl5lBRR2VVYDUfDfFY+rcV0hhDsO
+      UHWklCQTcS796Du0x2/VJxGb2A203qkbjTLjw3WBqszYzevc+tHf0GbHm6c/skqsxVWq8dZh
+      FeNagCpiWRZDJ3+8VPi3CKVTjSu1CI1iAVwBVJGxWzdom79e72S4rAFXAFVCSsmds7/Cp2zd
+      Aa6VliCWObi2iakQtw1QBaSUXDn3AZ7xiy1TpRT2/DhujW0vidsJ1Vjo8yuKUvM9gWuBK4AN
+      kkwmuXbqHaxPfoa3RQo/3KvNLctCVdWiILNO2BVFUYpi8aytR6j2jQDbtldNlyuAFVgusrCU
+      kunJScYvnSUxeJI2O7lpsTcroRpJcWr50sJf+Hsjr15zdruXUuafAYrfqXSjQqyMZVlcPneK
+      1NwUuw49wsz4LdITt8jN38ETnySoWLQL0XDdndVyRJzav7CWd9yg0sLfaGIodM8syyr6zhVA
+      Bdi2zZXzp8n9+jUCimT88jvoQt6bj6JCw5X8KuIUEtM085+dwuMULNu2UdWl0AyV7st77wbV
+      S2vZywuBrusr7g+gqmrrC2BsdJSdu+5FJ5ZSksvlGBwc5NChQ/j9/vxvczNTXD75NlZintT8
+      NJ0yjv9uQferzdfA2yiOGySlLPq38+fs/+vUsI3IapappQVgmiZtJYuvx8fHOXPqQ8LhMDeu
+      DHHw8EPYlsXQpU+ZP/k6nSQRQtAhaNoKvlrJLtxAO3/tkgLl+NhrpkF6jFpaAKd/+TYDDx8n
+      GAoBMD42xvzwJULD7+PXFdKf5njnZBteO4vPStOlQdOW+jrRaL7/WmlpAew7epyu7h6y2Swj
+      Vy8x8ovv0S0S9HruvjQV/HJhqcy3dE40IA0inJZ+7T29vUgpuf7pedInv0uvUp3YOy6tQ0sK
+      IJNJo2k6mUyGKx/+EmXw5/ctTGkkCt2IZhxNXRcN8pgtI4BMJpPvjchms9y59hFTn3xAMHab
+      YIM/5ZYp9A1IgxeNyhi+/AmeYIQdu/q49OGvWDz1JkFh0O369i6r0PSzV+KxGINvfZtwJMrI
+      zRvEzvyIiGKgbmlXf63zcrYuTS+AseuXCKsWtrSZGPyIMJl6J6muLE3+aga3qjHS19QCsCyL
+      2Y/fI0COc795j+zIp/VOUt0QQqCq6t1BKVF2EKuhaBAL1dQe8vTUJN7FUXwq6Fd/jtbg77zW
+      3Kv1ZX7SWsPSGAaguS3Atu4esl37l8axmvpJNo6UMj9P325496dxaOpio6oq/m27Vj/QxWUZ
+      mloAALnFmXonYVXcHplyNIaVanoBNEpGLocQTdAgrQuNUSk09Zu5eu4DfFND9U7Gijhz510r
+      0Jg0rQCy2SyTH/4IbxPE2a92bM2WoEHqg6YVwMzEOGEz7tasVcK2bQyj/K7y5bpUnUXnDd/d
+      ugpNOw6QmJtGV+o/4lluF/JmxNmUzgl3YllWfsvSTCaD1+vFNE10Xcc0TRRFyccCsiwLKeV9
+      uz42A00rANuykLL+roXz8p34M876WacgFS4kX/PC8U3EmUnrFHIn/bZto2kaQgg0Tcu7c7Zt
+      539fU0Q4oGH8H5rYBdp39DFiwR31TkY+Po5TE8K9gEyl4mgUyvVKeb1efD4fmqZhmmZerIqi
+      5Nf8qqqa/6zrOoqi5MWh62vclbJB2kRNKYBzZ8/i9XoJHvktDLu+GekUAl3X0XUdTdPyc3Kc
+      7woLUSPg1N6FonQ+q6qKx+PJp19V1fwzOb87z+R08TrHV45smLlATSkAZ6h/176DZGR93QrH
+      Vy50DQo/m6ZZFKWsUWi09NSLphRA6G6Uh46ODsJPvEw9jYBTuE3TzBd8IO8SOW6Q82+XxqLp
+      BLAwP8fAwABSSrLZLP1HHicm69f7sJz747gOXq83/+9GbgRvOg1ifZpOABc/eJe5mWlGhq9z
+      5hdvEY5E8A08Xrf8LI2OXPpXepwLgHDbAOulb+AQN4c+JdzWQXroA06d/BX7n36JZOe+eifN
+      pWIao/aHJhwH2D3wAJ98chHryhCB/sNMT03xwBGBoYfqnbQiHAtQj5FSW4NUe2XtjXUXxdIT
+      Cyv05cyxWDpPAn4Ji+ra2kSxtKTHVPFUccF30wlACMHBww/z1ve/w+9+9RtMn3ybO7duYGVT
+      9U5aEU7/f2Fs+s0SQ8AHD+6rp4tRm3vfmrYxxiVeoeQHGzdK07lAAAMHDrBn+zYunj3NY597
+      hYmPT+JNTtc7WfdR2CXqsnEcu1JNy9qUAlAUhRe//i9ILc5z+Sd/R9fiNcLGYr2TtSKuCJbY
+      yKi4c1Y1xzCaUgAAgUCQF1/5CtHcvNvD0kSUbrxXb5pWAEIIurfvRH/o+boOhLmsnbVPnqsd
+      TSsAWBLBoad+m5gerXdSXDaBWkimqQUA4Pf7CR1+1rUCW4BaOE1NLwCAnQ8+RtxqiUdx2WRa
+      otSoqtowQ+sutaMWRr7pBsLKoWoaCAVwZ1s2Is5aAWe6+HpxXaAScrkcAJFIhO4Xvk5WNvXj
+      tCzOCjlnZLyRaOoSI6UkkUgAsP/ocay9J2o6K7RR+q6bjcIZs4X/bwSaWgBer5dgMAgsZeoD
+      n/kSMbu6Xl3h1OZG6btuNpy8a8T8a2oBQPEUg2AohOWLVPX6hTuju1SHRsrLpm8EF/qUqqrS
+      //xXmHj7rwip1Zt7U2i6KxWDE3nBnQNUnAdOPKH15IsERrM2XrN6Amp6AZSy+9BRJoceg9tn
+      qnK9wuC2a5mEZdt2wzX46kVp3KTVCr+qqmWnOgsBA50KQU/1HJemd4HKEd59CKtKlYTzwsoF
+      uF0t8rMTXKoR2Ui6nCnehUGxnKAAy1UQa1kg5IRt2Qwa8+1skECkfU0CcGLeLEehCEq/dyLB
+      LUejukAb8cOdgmxZFoZh5GvrwuBgpTjHV5o2p+u01rScCwRgZFJrUnalfn25YwrPXa9vWw82
+      2hBVVfW+QlrtAutcr5aN5pYUgKp76rLsulkK/3pxns+xeI4InM/V3gthM/KzJQXg8QXWNDu0
+      kbrlGpnC2KeFQX+daNGORXBcmDXHC60DLdkGaO/sIim8FR/vCqAynIBfzpQGp0vTCZBb+nu5
+      89eC2wZYJ36/H8sbAiNbtzS04shxNXpmHLdptbwpdKtqSUtaACEEkYFjdSuAjdr1WW9K2xDL
+      4ViWzaBl39TA8c8Q18J1ubcbebk8hQviV3JvNnPuUMsKINLWhvfAk25B3ATWMs25sMt4OZwB
+      tdJ3564HWCN9R0+Q2uT9A0o3ntgqWJaVbwQ7hbtcTV9pzb5ZXcotLYBtPb2IvZsbOboR3R9b
+      SgwLDAtMW2LZklhGYczsJ5FTNpRex18vHAQsnDxYWtNv5F7uksh1cOC5LzJ44yOiqrlp99yM
+      EczlsCRktChj7EDxRFADXWi+MJ5gJwgFK5fGNjK09+5hoGc7d0ZvcmfwJ7TnBvFr66t1Lcsq
+      8tsLd5BcLg/WE9ezFna15QUQbWvHjGwnsziC966bWksXpV5RoS0Ji54OOo59jpcfPVHxlqXb
+      d+1h+64/YuTaBRYGv0ObJ03OBAToyuqxBgp3xCn87ORBuQmE680b1wKsEcuyuDM+zmhaMLDJ
+      btCm3EdKYraO7NpL56HHOXHkGF5v5QOAhfQPPMxMuIuJSz9D7XwQfzDK9KU36RE3kRKSOUHU
+      J9ccfKM0inOjuYcik8nI9WZaM5BOp3n3b/+Mnbk7+e+apZGatQUxTzvStvEYCTRpkRMaBhre
+      7j7aBh5l14GHiESjNXkmy7K48ekHzMzOMbWQZYd1kf7g/KoiqJUVvDVjoy6Kqq4HaGkLAODz
+      +QhoQK7eKakcKSGuR9nx2a/z6IFDACTicbLZLIFgEL/fvyl7D6uqysDRZ9ieTBKPxbg13MXY
+      2Jv0BHPoK/R6ruT7Swk5S+LV1p72jT6tM127sJeq5QUwevs20/OLtG+SkdtIA9iWkkU1jH/v
+      oxx55iXC0XsxTyPR+sQ/lVJiGga927ejaQqeI49y86M36M2eXpcAbQkf3/Fzoi9Tg9RWcP+C
+      hTyKorS+ABKLC7TLzds9Zj0FX0pJRqpoR36bx576HIFAoAYpWx+KotDW3g7Atu5erl+9THzq
+      Br3r1KMiIGEFkTJTl2B+uq4XTdtueQFEOztJeu5uTtVgmBISHQOEdj/I9v4D7Ojrb/j2STjS
+      RlxJsB6HRErJlNHJvqPPMTf5Jp2BzY3kVy64QcsLIBQKk5EaPox6J6UIKSXZvsd4+pU/aKrJ
+      c9u6ezjrf5Js9gZm7A4D3XbFUpjLBdn13J9gmgbXxk/SyWxN07oSQggMw2h9AcxN3sEnNm8Q
+      rFKytmD7seebqvDDUsH5wsuvAjD0yRnSw98m4KnMuuZCD9De2c3F9/+B/eH6FX4HVVVbcypE
+      Jp1menKSbCbD5Okf41PuvaBGcDGkhJgWYceu/nonZV04PVADDx5jNltZeyVnQqTvcQDa+h4m
+      Xp82cBGqqramBVhcmGfw9T9H1z1Ejbmi36q5ZrX0ulCZwJJS48FX/lVTxw26emWI3Xv2ovcc
+      w4i/j66WtwK2hJm0H9nzNEcOHMEwDGY+eYNej6RW26muhZYUgGGaROwkXiNx328bKfxSQkqq
+      5FDRbQOjbSd6uAPF68cT7kDoXmLDn5DTAgQmBzGEhtR8aKF2pKKizQ6T8bbRdfRZevv2kE6n
+      8fv9G3nUumBZFnv37UfTNB7+ra8x+EGAjvmfoJRkbTyrkt3xO+w9/AzB4NJG5jfO/5Qd4tq6
+      3oM7FWINLJe/692l0LQl2f7H2ffsF/H5A6RTKTq7uop8eNu2SR59nIWFBabHHuChww+j3V0Y
+      bpom1y59yrFHH8vP02nGwg9gGAY+ny//ed+jn2fojZ+xPXJv5DdrgnboD9j/wLF732WzpEc/
+      oN0vMCxWHEwrRzIricclbX4I64K5jI0qYFtAQS1VX4W0pAA6u7ZxwQrQRRJ/lV8yRDEAAAcN
+      SURBVDaPWWzbx3OvfDNf4EOh0H3HKIpCOBwmGAzS3d2NpmlFm0M88viJfBdcI7RF1kth4Qfw
+      ej3YgT7gFrBkKadlP8cOPlp03ML8LCGxgJSSYY7Rlb5Ih7/yrlBVwL6QRsKQ3InZ9PgVEoZk
+      aNbigU51XSJoyUawz+fjsd//U3Z99T+Q7j9eNkpcJQNWMVNhWgaZsPz4Bo5X3GNj2zZer7fI
+      x3fmxmez9VuoXysm7tzBCu7O5+nogmDniW8WiVxKyfjYKF5VspjVOPT4F8gGD67rfiFd0B9S
+      8aqCTp9Cj09lLGEj5doHIlvSAggh6O3dDkDv9m9y4edhrMvvoJZUEIWZVVojxyyVnpf/mL7d
+      e0mnU4TDlYddX6lxW1p7tgLzczOcvnCdjt1gSgXl4Dew7aV4QZp2r4h192wnNSJIWH4OdO+A
+      R77M/Ic3iXrSG7p/WIfJuGQMi4wp2RFWCOiVVVYtaQEKUVSVo5/7MrGuQ2QsVl0dJiXMh/rY
+      8+q/Z+/+A+i6TiSyttmWzezerIfDRx7ha9/4Q7JaJ7cXdXLpON3d3fftDWYaOXyaRA12I4Sg
+      q2cHY9ojG16xpwhBl1clnRP0+lTmEjC8UJlr1ZIWoBRVVXniK/+S6Ylxbr37D6hzt5d64KRk
+      wRBEVQuPCuNZncDOAXY/9hl6d+zacgV5I3Ru62Xh4Kvs2mcxOjLM1OQE23fsBODyRz8nO/pr
+      pNDY7gFv772GcUdIQ1RhqlaHV9DhXXpfvQHBWLqyqdhbQgCw5Hrs2r2X3t//d8Rji3cboyAU
+      wejVS3gjHRizc5x46qmm7p+vJ/sPHgFg34HD5HI5FubnCYXDpCY+ISDjGG3HmLR2sKvvcP4c
+      mZmv+PprqY4sW7KQsWnzrezkbBkBwJJrous6HZ1dRd+3n3gWqN0g2VYkGAxCMEgulyO4+1l6
+      +waIRtuK8jeTSWMnJ6AGvcF9AZWrMRMBRFcQQcuvCHOpL05Hg2maJBMJFFUhEomSTCa4cfKv
+      6LSuMZnrpE1ZIOxbeT+2K+MW7anK62zLlszmJLaQ7Air9w3UgSsAlxqSzWa4de1TMvMj2HOX
+      8BkTjBh7OPjE75JJp5HpSVRflH0PHmd6Yoz5i6/RJcaWvd5aBZBPhyWZyNjsblPQSlTgCsCl
+      ZgyeO0l0/DV09d7g30zGz4j9IGE9wzMv/5silyiVSnLz3b+k6+6AWinrFQCAYUsmsjZ721SS
+      hs3ogo1HE64AXGpHJp3m4snXl7o+A53YuQSeaB8Hjj4NlO8unp2eYObX36Lde/900Y0IACCW
+      k8waNqYt6fOr+FwBuDQiV86/S3j8ddSStutGBQBLlgBAv+sKtfxAmEvz0X/oBFPp2qyL1hWR
+      L/zgCsClAfH5fIjOo5tyry01DuDSPCj+LqjSqrHSOKSFm5i7FsCl4UinksjpM1W9ZuEO9U7U
+      OtM0XQvg0njoHi+GaVfNP1luGnvLLop3aW5UVUUN91Xtes4i/tI/cF0glwZECMH+J7/CeK63
+      ZtGk81s11eTqLi4bJBSKsO/5f8u8WduYqK4AXBqWcKQNz4FXyZbENdvoDpIxU+QjTLgCcGlY
+      hBDsOfgwi9HnWEgrpHJiQ6FRTHtptV/vy39CzLs0Jd7tBXJpaBRF4aHnvsrs7AtEDJOx8ydR
+      rv0anaVF8GtZvnHNjNDT2cfufQPMXD5A5vqsOxfIpbmQUvLhW98ncfUjep95hfjwRayJayhC
+      EBHZZRc0ZaSGGHiShBqis7OTiXdfZ0R0ugJwaT4ymQyxhXm29fSSy+XIZrNI2+LKL/4ez+h5
+      NEUUtRESgW52vvBV+vY/gG3bnP/lWyQNmys3b7sCcGkdLMvi6oUzzH/yPv75m6gCFpQQB778
+      x/Ts7LsvTlEul3MF4NJ6ZDMZbl69xOK1jzn4wpeJtrUt6xq5AnDZ0rjdoC5bGlcALlsaVwAu
+      LY2UkswKAYldAbi0NNMzM3zr+/+L2bm5sr+7AnBpaRKpJNNWhsV4rOzvrgBcWpqgP4BuLu3X
+      UA63G9SlpTEMgzuTk/Tt3Fl2LMC1AC4tja7r9O+6F+resixujoxgmktzrF0BuGwpRm7fZnj4
+      Rl4Q7nRoly1FLBHn6shNOi91sr231xWAy9Yins1wSUlz7Tc/Z1sw4grAZWtxeeI2UlPIRfyM
+      YbhtAJetRX/7tqLPrgBcthQP9O1BGPdCJboCcNlS9HZ3s8MXduMCuWxNPB4Pz+09BPGlzbld
+      AbhsKYQQPPHIMY7u2I2U0hWAy9ZDVVVefe5zeA3bFYDL1kMIga5pBBNuN6jLFsUwTbya7grA
+      ZWsSCYeREb8rAJetiaIoHO7e5a4HcNm6jN0ZdwXgsnVxu0FdtjRCCFcALlsbVwAuWxpXAC5b
+      GlcALlsaVwAuWxpXAC5bGlcALlua/w8Nca+6FLRNVAAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='States Energy Production' width='192'>
+      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
+      yDDotTGtFP8P8/OhsqTSTnIAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
