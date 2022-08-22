@@ -1,4 +1,4 @@
-from .app import db
+from .heroku_app import db
 
 
 class Pet(db.Model):
