@@ -3,6 +3,7 @@ var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
   id: "light-v10",
+  accessToken: API_KEY
 });
 
 // Initialize all of the LayerGroups we'll be using
@@ -126,31 +127,31 @@ d3.json("/api/v1.0/fourteen_fifteen").then(function(ffInfo) {
     var plantType;
 
     // Loop through the stations (they're the same size and have partially matching data)
-    for (var i = 0; i < stationInfo.length; i++) {
+    for (var i = 0; i < primaryFuel.length; i++) {
 
       // Create a new station object with properties of both station objects
-      var plant = Object.assign({}, stationInfo[i], stationStatus[i]);
+      var plant = Object.assign({}, plantName[i], renewableStatus[i], primaryFuel[i]);
       // If a station is listed but not installed, it's coming soon
       if (!plant.Renewable == 'True') {
-        plantType = "Renewable";
+        plantType = "RENEWABLE";
       }
       // If a station has no bikes available, it's empty
       else if (!plant.Renewable == 'False') {
-        plantType = "Non-Renewable";
+        plantType = "NONRENEWABLE";
       }
 
       // Update the station count
-      typeCount[stationStatusCode]++;
+      typeCount[plantType]++;
       // Create a new marker with the appropriate icon and coordinates
-      var newMarker = L.marker([station.lat, station.lon], {
-        icon: icons[stationStatusCode]
+      var newMarker = L.marker([plant.Lat, plant.Lng], {
+        icon: icons[plantType]
       });
 
       // Add the new marker to the appropriate layer
-      newMarker.addTo(layers[stationStatusCode]);
+      newMarker.addTo(layers[plantType]);
 
       // Bind a popup to the marker that will  display on click. This will be rendered as HTML
-      newMarker.bindPopup(station.name + "<br> Capacity: " + station.capacity + "<br>" + station.num_bikes_available + " Bikes Available");
+      newMarker.bindPopup(plant.plantName + "<br> Renewable: " + plant.renewableStatus + "<br>" + " Primary Fuel: " + plant.primaryFuel);
     }
 
     // Call the updateLegend function, which will... update the legend!
@@ -164,11 +165,8 @@ d3.json("/api/v1.0/fourteen_fifteen").then(function(ffInfo) {
 function updateLegend(time, stationCount) {
     document.querySelector(".legend").innerHTML = [
       "<p>Updated: " + moment.unix(time).format("h:mm:ss A") + "</p>",
-      "<p class='out-of-order'>Out of Order Stations: " + stationCount.OUT_OF_ORDER + "</p>",
-      "<p class='coming-soon'>Stations Coming Soon: " + stationCount.COMING_SOON + "</p>",
-      "<p class='empty'>Empty Stations: " + stationCount.EMPTY + "</p>",
-      "<p class='low'>Low Stations: " + stationCount.LOW + "</p>",
-      "<p class='healthy'>Healthy Stations: " + stationCount.NORMAL + "</p>"
+      "<p class='renewable'>Renewable Power Plants: " + typeCount.RENEWABLE + "</p>",
+      "<p class='non-renewable'>Non-Renewable Power Plants: " + typeCount.NONRENEWABLE + "</p>"
     ].join("");
   }
   
