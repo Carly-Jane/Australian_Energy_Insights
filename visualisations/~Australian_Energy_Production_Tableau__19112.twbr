@@ -9,6 +9,7 @@
     <MapboxVectorStylesAndLayers />
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
     <SetMembershipControl />
@@ -26,34 +27,34 @@
     </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
   </_.fcp.AnimationOnByDefault.false...style>
   <datasources>
-    <datasource caption='energy_production_per_capita' inline='true' name='federated.149jk4o16urcxf1c6133a0f2lfjt' version='18.1'>
+    <datasource caption='population_renewable_energy' inline='true' name='federated.079kgg30ob8dp91d4uj6o096g7l4' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='energy_production_per_capita' name='textscan.1oszw1e0epq4s318e22ho0tvpzz1'>
-            <connection class='textscan' directory='C:/Users/carly/Desktop/Australian_Energy_Insights/export_data' filename='energy_production_per_capita.csv' password='' server='' />
+          <named-connection caption='population_renewable_energy' name='textscan.0yasjmt1rlypzp14j35qv1ayvezg'>
+            <connection class='textscan' directory='C:/Users/carly/Desktop/Australian_Energy_Insights/export_data' filename='population_renewable_energy.csv' password='' server='' />
           </named-connection>
         </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0yasjmt1rlypzp14j35qv1ayvezg' name='population_renewable_energy.csv' table='[population_renewable_energy#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
             <column datatype='integer' name='F1' ordinal='0' />
             <column datatype='string' name='State' ordinal='1' />
-            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
-            <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+            <column datatype='integer' name='Population_Total' ordinal='2' />
+            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='3' />
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0yasjmt1rlypzp14j35qv1ayvezg' name='population_renewable_energy.csv' table='[population_renewable_energy#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
             <column datatype='integer' name='F1' ordinal='0' />
             <column datatype='string' name='State' ordinal='1' />
-            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
-            <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+            <column datatype='integer' name='Population_Total' ordinal='2' />
+            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='3' />
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <parent-name>[population_renewable_energy.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -70,19 +71,19 @@
             <remote-name>F1</remote-name>
             <remote-type>20</remote-type>
             <local-name>[F1]</local-name>
-            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <parent-name>[population_renewable_energy.csv]</parent-name>
             <remote-alias>F1</remote-alias>
             <ordinal>0</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>State</remote-name>
             <remote-type>129</remote-type>
             <local-name>[State]</local-name>
-            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <parent-name>[population_renewable_energy.csv]</parent-name>
             <remote-alias>State</remote-alias>
             <ordinal>1</ordinal>
             <local-type>string</local-type>
@@ -91,94 +92,53 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RGB' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population_Total</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population_Total]</local-name>
+            <parent-name>[population_renewable_energy.csv]</parent-name>
+            <remote-alias>Population_Total</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Renewable_MWh_Per_Capita</remote-name>
             <remote-type>5</remote-type>
             <local-name>[Renewable_MWh_Per_Capita]</local-name>
-            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <parent-name>[population_renewable_energy.csv]</parent-name>
             <remote-alias>Renewable_MWh_Per_Capita</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Non_Renewable_MWh_Per_Capita</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Non_Renewable_MWh_Per_Capita]</local-name>
-            <parent-name>[energy_production_per_capita.csv]</parent-name>
-            <remote-alias>Non_Renewable_MWh_Per_Capita</remote-alias>
             <ordinal>3</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <column caption='Non Renewable MWh Per Capita' datatype='real' name='[Non_Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+      <column caption='Population Total' datatype='integer' name='[Population_Total]' role='measure' type='quantitative' />
       <column caption='Renewable MWh Per Capita' datatype='real' name='[Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
       <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
-      <_.fcp.ObjectModelTableType.true...column caption='energy_production_per_capita.csv' datatype='table' name='[__tableau_internal_object_id__].[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]' role='measure' type='quantitative' />
-      <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
-      <column-instance column='[Non_Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Non_Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='population_renewable_energy.csv' datatype='table' name='[__tableau_internal_object_id__].[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]' role='measure' type='quantitative' />
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <style>
-        <style-rule element='mark'>
-          <encoding attr='color' field='[none:State:nk]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;QLD&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;VIC&quot;</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;NSW&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;TAS&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;WA&quot;</bucket>
-            </map>
-            <map to='#edc948'>
-              <bucket>&quot;SA&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;NT&quot;</bucket>
-            </map>
-            <map to='#ff9da7'>
-              <bucket>&quot;ACT&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[:Measure Names]' type='palette'>
-            <map to='#6ad400'>
-              <bucket>&quot;[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Renewable_MWh_Per_Capita:qk]&quot;</bucket>
-            </map>
-            <map to='#6b3d15'>
-              <bucket>&quot;[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Non_Renewable_MWh_Per_Capita:qk]&quot;</bucket>
-            </map>
-          </encoding>
-        </style-rule>
-      </style>
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
       </semantic-values>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
         <objects>
-          <object caption='energy_production_per_capita.csv' id='energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C'>
+          <object caption='population_renewable_energy.csv' id='population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16'>
             <properties context=''>
-              <relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+              <relation connection='textscan.0yasjmt1rlypzp14j35qv1ayvezg' name='population_renewable_energy.csv' table='[population_renewable_energy#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
                   <column datatype='integer' name='F1' ordinal='0' />
                   <column datatype='string' name='State' ordinal='1' />
-                  <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
-                  <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+                  <column datatype='integer' name='Population_Total' ordinal='2' />
+                  <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='3' />
                 </columns>
               </relation>
             </properties>
@@ -373,6 +333,114 @@
       <column-instance column='[Non_Renewable_Energy_Plants_2014_2015]' derivation='Sum' name='[sum:Non_Renewable_Energy_Plants_2014_2015:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Non_Renewable_Energy_Plants_2017_2018]' derivation='Sum' name='[sum:Non_Renewable_Energy_Plants_2017_2018:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Non_Renewable_Energy_Plants_2020_2021]' derivation='Sum' name='[sum:Non_Renewable_Energy_Plants_2020_2021:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/carly/Desktop/Australian_Energy_Insights/visualisations/energy_progression_merged.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>energy_progression_merged.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>1</ordinal>
+              <family>energy_progression_merged.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Non_Renewable_Energy_Plants_2014_2015</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Non_Renewable_Energy_Plants_2014_2015]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Non_Renewable_Energy_Plants_2014_2015</remote-alias>
+              <ordinal>2</ordinal>
+              <family>energy_progression_merged.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Non_Renewable_Energy_Plants_2017_2018</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Non_Renewable_Energy_Plants_2017_2018]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Non_Renewable_Energy_Plants_2017_2018</remote-alias>
+              <ordinal>3</ordinal>
+              <family>energy_progression_merged.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Non_Renewable_Energy_Plants_2020_2021</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Non_Renewable_Energy_Plants_2020_2021]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Non_Renewable_Energy_Plants_2020_2021</remote-alias>
+              <ordinal>4</ordinal>
+              <family>energy_progression_merged.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Pivot Field Names]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Names</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Pivot</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Values</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Pivot Field Values]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Values</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Pivot</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_progression_merged.csv_D8A55EC3405349C4A7EDEC7A54E5571B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
@@ -454,6 +522,241 @@
                 </relation>
               </relation>
             </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='energy_production_per_capita' inline='true' name='federated.149jk4o16urcxf1c6133a0f2lfjt' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='energy_production_per_capita' name='textscan.1oszw1e0epq4s318e22ho0tvpzz1'>
+            <connection class='textscan' directory='C:/Users/carly/Desktop/Australian_Energy_Insights/export_data' filename='energy_production_per_capita.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='State' ordinal='1' />
+            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
+            <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='State' ordinal='1' />
+            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
+            <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Renewable_MWh_Per_Capita</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Renewable_MWh_Per_Capita]</local-name>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias>Renewable_MWh_Per_Capita</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Non_Renewable_MWh_Per_Capita</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Non_Renewable_MWh_Per_Capita]</local-name>
+            <parent-name>[energy_production_per_capita.csv]</parent-name>
+            <remote-alias>Non_Renewable_MWh_Per_Capita</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Non Renewable MWh Per Capita' datatype='real' name='[Non_Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+      <column caption='Renewable MWh Per Capita' datatype='real' name='[Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='energy_production_per_capita.csv' datatype='table' name='[__tableau_internal_object_id__].[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]' role='measure' type='quantitative' />
+      <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Non_Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Non_Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/carly/Desktop/Australian_Energy_Insights/visualisations/energy_production_per_capita.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/23/2022 12:51:32 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='energy_production_per_capita' increment-value='%null%' refresh-type='create' rows-inserted='8' timestamp-start='2022-08-23 12:51:31.696' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>energy_production_per_capita.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>1</ordinal>
+              <family>energy_production_per_capita.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Renewable_MWh_Per_Capita</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Renewable_MWh_Per_Capita]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Renewable_MWh_Per_Capita</remote-alias>
+              <ordinal>2</ordinal>
+              <family>energy_production_per_capita.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Non_Renewable_MWh_Per_Capita</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Non_Renewable_MWh_Per_Capita]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Non_Renewable_MWh_Per_Capita</remote-alias>
+              <ordinal>3</ordinal>
+              <family>energy_production_per_capita.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:State:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;QLD&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;VIC&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;NSW&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;TAS&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;WA&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;SA&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;NT&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;ACT&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#6ad400'>
+              <bucket>&quot;[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Renewable_MWh_Per_Capita:qk]&quot;</bucket>
+            </map>
+            <map to='#6b3d15'>
+              <bucket>&quot;[federated.149jk4o16urcxf1c6133a0f2lfjt].[sum:Non_Renewable_MWh_Per_Capita:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='energy_production_per_capita.csv' id='energy_production_per_capita.csv_307635EA91A742D7977B827A7AF35B5C'>
+            <properties context=''>
+              <relation connection='textscan.1oszw1e0epq4s318e22ho0tvpzz1' name='energy_production_per_capita.csv' table='[energy_production_per_capita#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='State' ordinal='1' />
+                  <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='2' />
+                  <column datatype='real' name='Non_Renewable_MWh_Per_Capita' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
           </object>
         </objects>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -481,6 +784,7 @@
             <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='3' />
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <refresh increment-key='' incremental-updates='false' />
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
@@ -559,6 +863,74 @@
       <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
       <column-instance column='[Median_Income]' derivation='Sum' name='[sum:Median_Income:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Renewable_MWh_Per_Capita]' derivation='Sum' name='[sum:Renewable_MWh_Per_Capita:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/carly/Desktop/Australian_Energy_Insights/visualisations/income_renewable_energy.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/23/2022 12:51:40 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='income_renewable_energy' increment-value='%null%' refresh-type='create' rows-inserted='8' timestamp-start='2022-08-23 12:51:39.897' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>income_renewable_energy.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[income_renewable_energy.csv_5CDA56414B96466EADE1D69E84F01EFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>1</ordinal>
+              <family>income_renewable_energy.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[income_renewable_energy.csv_5CDA56414B96466EADE1D69E84F01EFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Median_Income</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Median_Income]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Median_Income</remote-alias>
+              <ordinal>2</ordinal>
+              <family>income_renewable_energy.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[income_renewable_energy.csv_5CDA56414B96466EADE1D69E84F01EFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Renewable_MWh_Per_Capita</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Renewable_MWh_Per_Capita]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Renewable_MWh_Per_Capita</remote-alias>
+              <ordinal>3</ordinal>
+              <family>income_renewable_energy.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[income_renewable_energy.csv_5CDA56414B96466EADE1D69E84F01EFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
@@ -617,124 +989,8 @@
                 </columns>
               </relation>
             </properties>
-          </object>
-        </objects>
-      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-    </datasource>
-    <datasource caption='population_renewable_energy' inline='true' name='federated.079kgg30ob8dp91d4uj6o096g7l4' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='population_renewable_energy' name='textscan.0yasjmt1rlypzp14j35qv1ayvezg'>
-            <connection class='textscan' directory='C:/Users/carly/Desktop/Australian_Energy_Insights/export_data' filename='population_renewable_energy.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0yasjmt1rlypzp14j35qv1ayvezg' name='population_renewable_energy.csv' table='[population_renewable_energy#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
-            <column datatype='integer' name='F1' ordinal='0' />
-            <column datatype='string' name='State' ordinal='1' />
-            <column datatype='integer' name='Population_Total' ordinal='2' />
-            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='3' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0yasjmt1rlypzp14j35qv1ayvezg' name='population_renewable_energy.csv' table='[population_renewable_energy#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
-            <column datatype='integer' name='F1' ordinal='0' />
-            <column datatype='string' name='State' ordinal='1' />
-            <column datatype='integer' name='Population_Total' ordinal='2' />
-            <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='3' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[population_renewable_energy.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>F1</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[F1]</local-name>
-            <parent-name>[population_renewable_energy.csv]</parent-name>
-            <remote-alias>F1</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>State</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[State]</local-name>
-            <parent-name>[population_renewable_energy.csv]</parent-name>
-            <remote-alias>State</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RGB' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Population_Total</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[Population_Total]</local-name>
-            <parent-name>[population_renewable_energy.csv]</parent-name>
-            <remote-alias>Population_Total</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Renewable_MWh_Per_Capita</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Renewable_MWh_Per_Capita]</local-name>
-            <parent-name>[population_renewable_energy.csv]</parent-name>
-            <remote-alias>Renewable_MWh_Per_Capita</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Population Total' datatype='integer' name='[Population_Total]' role='measure' type='quantitative' />
-      <column caption='Renewable MWh Per Capita' datatype='real' name='[Renewable_MWh_Per_Capita]' role='measure' type='quantitative' />
-      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
-      <_.fcp.ObjectModelTableType.true...column caption='population_renewable_energy.csv' datatype='table' name='[__tableau_internal_object_id__].[population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16]' role='measure' type='quantitative' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
-      </semantic-values>
-      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-        <objects>
-          <object caption='population_renewable_energy.csv' id='population_renewable_energy.csv_DA15CC739B3E47449B0C33DEC79EFA16'>
-            <properties context=''>
-              <relation connection='textscan.0yasjmt1rlypzp14j35qv1ayvezg' name='population_renewable_energy.csv' table='[population_renewable_energy#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
-                  <column datatype='integer' name='F1' ordinal='0' />
-                  <column datatype='string' name='State' ordinal='1' />
-                  <column datatype='integer' name='Population_Total' ordinal='2' />
-                  <column datatype='real' name='Renewable_MWh_Per_Capita' ordinal='3' />
-                </columns>
-              </relation>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
             </properties>
           </object>
         </objects>
@@ -1229,7 +1485,7 @@
             <format attr='height' field='[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]' value='123' />
           </style-rule>
           <style-rule element='cell'>
-            <format attr='width' field='[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]' value='155' />
+            <format attr='width' field='[federated.149jk4o16urcxf1c6133a0f2lfjt].[:Measure Names]' value='20' />
           </style-rule>
         </style>
         <panes>
@@ -1248,8 +1504,8 @@
                 <format attr='mark-labels-cull' value='true' />
               </style-rule>
               <style-rule element='pane'>
-                <format attr='minwidth' value='310' />
-                <format attr='maxwidth' value='310' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
                 <format attr='minheight' value='534' />
                 <format attr='maxheight' value='534' />
                 <format attr='aspect' value='0' />
@@ -1319,7 +1575,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='93'>
-    <window class='worksheet' maximized='true' name='States Energy Production'>
+    <window class='worksheet' name='States Energy Production'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1572,7 +1828,7 @@
       </cards>
       <simple-id uuid='{4C04AB45-696A-4BA6-B260-194E8ADABD0D}' />
     </window>
-    <window class='worksheet' name='Renewable Energy Progression Map'>
+    <window class='worksheet' maximized='true' name='Renewable Energy Progression Map'>
       <cards>
         <edge name='left'>
           <strip size='160'>
