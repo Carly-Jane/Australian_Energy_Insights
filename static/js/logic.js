@@ -108,11 +108,11 @@ var icons = {
   };
 
 // Perform an API call to the 2014/2015 endpoint
-d3.json("/api/v1.0/fourteen_fifteen").then(function(ffInfo) {
+d3.json("/fourteen_fifteen").then(function(ffInfo) {
     // When the first API call is complete, perform another call to the 2017/2018 endpoint
-  d3.json("/api/v1.0//seventeen_eighteen").then(function(seInfo) {
+  d3.json("/seventeen_eighteen").then(function(seInfo) {
         // When the second API call is complete, perform another call to the 2017/2018 endpoint
-    d3.json("/api/v1.0//twenty_twentyone").then(function(ttInfo) {
+    d3.json("/twenty_twentyone").then(function(ttInfo) {
         var plantName = ffInfo[0].Facility_Name;
         var renewableStatus = ffInfo[0].Renewable;
         var primaryFuel = ffInfo[0].Primary_Fuel;

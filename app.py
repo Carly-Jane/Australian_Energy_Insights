@@ -126,6 +126,9 @@ def index_pop_renewable_energy():
     # Return the template with the teams list passed in
     return jsonify(list_cur)
 
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
