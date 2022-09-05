@@ -6,6 +6,8 @@ from pymongo import MongoClient
 import json
 
 from bson.json_util import ObjectId
+from config import password
+from config import username
 
 class MyEncoder(json.JSONEncoder):
 
@@ -19,7 +21,7 @@ app = Flask(__name__)
 app.json_encoder = MyEncoder
 
 # Create connection variable
-conn = 'mongodb://localhost:27017'
+conn = f'mongodb+srv://{username}:{password}@energyaustralia-morgana.cmpqq0l.mongodb.net/?retryWrites=true&w=majority'
 
 # Pass connection to the pymongo instance.
 client = pymongo.MongoClient(conn)

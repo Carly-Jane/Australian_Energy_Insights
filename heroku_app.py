@@ -7,6 +7,22 @@ from flask import (
     request,
     redirect)
 
+# Import our pymongo library, which lets us connect our Flask app to our Mongo database.
+import pymongo
+from pymongo import MongoClient
+import json
+
+from bson.json_util import ObjectId
+from config import password
+from config import username
+
+class MyEncoder(json.JSONEncoder):
+
+    def default(self, obj):
+        if isinstance(obj, ObjectId):
+            return str(obj)
+        return super(MyEncoder, self).default(obj)
+
 #################################################
 # Flask Setup
 #################################################
@@ -15,70 +31,120 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
+app.json_encoder = MyEncoder
 
-# from flask_sqlalchemy import SQLAlchemy
+# Create connection variable
+conn = f'mongodb+srv://{username}:{password}@energyaustralia-morgana.cmpqq0l.mongodb.net/?retryWrites=true&w=majority'
 
-# uri = os.getenv("DATABASE_URL","")
-# if uri.startswith("postgres://"):
-#     uri = uri.replace("postgres://","postgresql://",1)
-# app.config['SQLALCHEMY_DATABASE_URI'] = uri or "sqlite:///db.sqlite"
+# Pass connection to the pymongo instance.
+client = pymongo.MongoClient(conn)
 
-# # Remove tracking modifications
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# Connect to a database. Will create one if not already available.
+db = client.energy_db
 
-# db = SQLAlchemy(app)
+# Set route
+@app.route('/aus_income')
+def index_income():
+    # Store the each collection in a list
+    aus_income = db.Aus_Income.find()
+    
+    list_cur = list(aus_income)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# from .heroku.models import Pet
+# Set route
+@app.route('/aus_population')
+def index_population():
+    # Store the each collection in a list
+    aus_population = db.Aus_Population.find()
+    
+    list_cur = list(aus_population)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
+# Set route
+@app.route('/energy_production_per_capita')
+def index_per_capita():
+    # Store the each collection in a list
+    energy_production_per_capita = db.Energy_Production_Per_Capita.find()
+    
+    list_cur = list(energy_production_per_capita)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
+
+# Set route
+@app.route('/energy_production')
+def index_energy_production():
+    # Store the each collection in a list
+    energy_production = db.Energy_Progression.find()
+    
+    list_cur = list(energy_production)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
+
+# Set route
+@app.route('/income_renewable_energy')
+def index_renewable_energy():
+    # Store the each collection in a list
+    income_renewable_energy = db.Income_Renewable_Energy.find()    
+    
+    list_cur = list(income_renewable_energy)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
+
+# Set route
+@app.route('/fourteen_fifteen')
+def index_four_five():
+    # Store the each collection in a list
+    fourteen_fifteen = db.Fourteen_Fifteen_Energy_Production.find()
+    
+    list_cur = list(fourteen_fifteen)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
+
+# Set route
+@app.route('/seventeen_eighteen')
+def index_seven_eight():
+    # Store the each collection in a list
+    seventeen_eighteen = db.Seventeen_Eighteen_Energy_Production.find()
+    
+    list_cur = list(seventeen_eighteen)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
+
+# Set route
+@app.route('/twenty_twentyone')
+def index_tw_two():
+    # Store the each collection in a list
+    twenty_twentyone = db.Twenty_Twentyone_Energy_Production.find()
+    
+    list_cur = list(twenty_twentyone)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
+
+# Set route
+@app.route('/population_renewable_energy')
+def index_pop_renewable_energy():
+    # Store the each collection in a list
+    population_renewable_energy = db.Population_Renewable_Energy.find()
+    
+    list_cur = list(population_renewable_energy)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
 # create route that renders index.html template
 @app.route("/")
 def home():
     return render_template("index.html")
-
-
-# # Query the database and send the jsonified results
-# @app.route("/send", methods=["GET", "POST"])
-# def send():
-#     if request.method == "POST":
-#         name = request.form["petName"]
-#         lat = request.form["petLat"]
-#         lon = request.form["petLon"]
-
-#         pet = Pet(name=name, lat=lat, lon=lon)
-#         db.session.add(pet)
-#         db.session.commit()
-#         return redirect("/", code=302)
-
-#     return render_template("form.html")
-
-
-# @app.route("/api/pals")
-# def pals():
-#     results = db.session.query(Pet.name, Pet.lat, Pet.lon).all()
-
-#     hover_text = [result[0] for result in results]
-#     lat = [result[1] for result in results]
-#     lon = [result[2] for result in results]
-
-#     pet_data = [{
-#         "type": "scattergeo",
-#         "locationmode": "USA-states",
-#         "lat": lat,
-#         "lon": lon,
-#         "text": hover_text,
-#         "hoverinfo": "text",
-#         "marker": {
-#             "size": 15,
-#             "line": {
-#                 "color": "rgb(8,8,8)",
-#                 "width": 1
-#             },
-#         }
-#     }]
-
-#     return jsonify(pet_data)
-
 
 if __name__ == "__main__":
     app.run()
