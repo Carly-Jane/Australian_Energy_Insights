@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Config file
+# Python Config file
 config.py
+
+# Jupyter config file
+config.ipynb
