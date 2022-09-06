@@ -133,3 +133,6 @@ config.py
 
 # Jupyter config file
 config.ipynb
+
+#Javascript config file
+config.js
