@@ -10,25 +10,25 @@ var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{
 
 // Initialize all of the LayerGroups we'll be using
 var layers = {
-  RENEWABLE: new L.LayerGroup(),
-  NONRENEWABLE: new L.LayerGroup(),
-  // TWENTYSEVENTEEN_RENEWABLE: new L.LayerGroup(),
-  // TWENTYSEVENTEEN_NONRENEWABLE: new L.LayerGroup(),
-  // TWENTYTWENTY_RENEWABLE: new L.LayerGroup(),
-  // TWENTYTWENTY_NONRENEWABLE: new L.LayerGroup()
+  TWENTYFOURTEEN_RENEWABLE: new L.LayerGroup(),
+  TWENTYFOURTEEN_NONRENEWABLE: new L.LayerGroup(),
+  TWENTYSEVENTEEN_RENEWABLE: new L.LayerGroup(),
+  TWENTYSEVENTEEN_NONRENEWABLE: new L.LayerGroup(),
+  TWENTYTWENTY_RENEWABLE: new L.LayerGroup(),
+  TWENTYTWENTY_NONRENEWABLE: new L.LayerGroup()
 };
 
 // Create the map with our layers
 var map = L.map("map-id", {
   center: [-25.27, 133.77],
-  zoom: 2,
+  zoom: 5,
   layers: [
-    layers.RENEWABLE,
-    layers.NONRENEWABLE,
-    // layers.TWENTYSEVENTEEN_RENEWABLE,
-    // layers.TWENTYSEVENTEEN_NONRENEWABLE,
-    // layers.TWENTYTWENTY_RENEWABLE,
-    // layers.TWENTYTWENTY_NONRENEWABLE
+    layers.TWENTYFOURTEEN_RENEWABLE,
+    layers.TWENTYFOURTEEN_NONRENEWABLE,
+    layers.TWENTYSEVENTEEN_RENEWABLE,
+    layers.TWENTYSEVENTEEN_NONRENEWABLE,
+    layers.TWENTYTWENTY_RENEWABLE,
+    layers.TWENTYTWENTY_NONRENEWABLE
   ]
 });
 
@@ -37,12 +37,12 @@ lightmap.addTo(map);
 
 // Create an overlays object to add to the layer control
 var overlays = {
-  "Renewable Power Plants 2014/2015": layers.RENEWABLE,
-  "Non-Renewable Power Plants 2014/2015": layers.NONRENEWABLE,
-  // "Renewable Power Plants 2017/2018": layers.TWENTYSEVENTEEN_RENEWABLE,
-  // "Non-Renewable Power Plants 2017/2018": layers.TWENTYSEVENTEEN_NONRENEWABLE,
-  // "Renewable Power Plants 2020/2021": layers.TWENTYTWENTY_RENEWABLE,
-  // "Non-Renewable Power Plants 2020/2021": layers.TWENTYTWENTY_NONRENEWABLE,
+  "Renewable Power Plants 2014/2015": layers.TWENTYFOURTEEN_RENEWABLE,
+  "Non-Renewable Power Plants 2014/2015": layers.TWENTYFOURTEEN_NONRENEWABLE,
+  "Renewable Power Plants 2017/2018": layers.TWENTYSEVENTEEN_RENEWABLE,
+  "Non-Renewable Power Plants 2017/2018": layers.TWENTYSEVENTEEN_NONRENEWABLE,
+  "Renewable Power Plants 2020/2021": layers.TWENTYTWENTY_RENEWABLE,
+  "Non-Renewable Power Plants 2020/2021": layers.TWENTYTWENTY_NONRENEWABLE,
 };
 
 // Create a control for our layers, add our overlay layers to it
@@ -71,48 +71,52 @@ info.addTo(map);
 
 // Initialize an object containing icons for each layer group
 var icons = {
-  RENEWABLE: L.ExtraMarkers.icon({
-    icon: "ion-settings",
+  TWENTYFOURTEEN_RENEWABLE: L.ExtraMarkers.icon({
+    icon: "ion-leaf",
     iconColor: "white",
     markerColor: "green",
     shape: "star"
   }),
-  // TWENTYSEVENTEEN_RENEWABLE: L.ExtraMarkers.icon({
-  //   icon: "ion-settings",
-  //   iconColor: "white",
-  //   markerColor: "green",
-  //   shape: "star"
-  // }),
-  // TWENTYTWENTY_RENEWABLE: L.ExtraMarkers.icon({
-  //   icon: "ion-settings",
-  //   iconColor: "white",
-  //   markerColor: "green",
-  //   shape: "star"
-  // }),
-  NONRENEWABLE: L.ExtraMarkers.icon({
-    icon: "ion-android-bicycle",
+  TWENTYSEVENTEEN_RENEWABLE: L.ExtraMarkers.icon({
+    icon: "ion-leaf",
+    iconColor: "white",
+    markerColor: "green-light",
+    shape: "star"
+  }),
+  TWENTYTWENTY_RENEWABLE: L.ExtraMarkers.icon({
+    icon: "ion-leaf",
+    iconColor: "white",
+    markerColor: "green-dark",
+    shape: "star"
+  }),
+  TWENTYFOURTEEN_NONRENEWABLE: L.ExtraMarkers.icon({
+    icon: "ion-sad",
     iconColor: "white",
     markerColor: "red",
     shape: "circle"
-  })
-  // TWENTYSEVENTEEN_NONRENEWABLE: L.ExtraMarkers.icon({
-  //   icon: "ion-android-bicycle",
-  //   iconColor: "white",
-  //   markerColor: "red",
-  //   shape: "circle"
-  // }),
-  // TWENTYTWENTY_NONRENEWABLE: L.ExtraMarkers.icon({
-  //   icon: "ion-android-bicycle",
-  //   iconColor: "white",
-  //   markerColor: "red",
-  //   shape: "circle"
-  // }),
+  }),
+  TWENTYSEVENTEEN_NONRENEWABLE: L.ExtraMarkers.icon({
+    icon: "ion-sad",
+    iconColor: "white",
+    markerColor: "orange-dark",
+    shape: "circle"
+  }),
+  TWENTYTWENTY_NONRENEWABLE: L.ExtraMarkers.icon({
+    icon: "ion-sad",
+    iconColor: "white",
+    markerColor: "red",
+    shape: "circle"
+  }),
 };
 
       // Create an object to keep of the number of markers in each layer
       var typeCount = {
-        RENEWABLE: 0,
-        NONRENEWABLE: 0
+        TWENTYFOURTEEN_RENEWABLE: 0,
+        TWENTYFOURTEEN_NONRENEWABLE: 0,
+        TWENTYSEVENTEEN_RENEWABLE: 0,
+        TWENTYSEVENTEEN_NONRENEWABLE: 0,
+        TWENTYTWENTY_RENEWABLE: 0,
+        TWENTYTWENTY_NONRENEWABLE: 0
       };
 
 // Perform an API call to the 2014/2015 endpoint
@@ -120,6 +124,7 @@ d3.json("/combined_plant_data").then(function (plant_info) {
       var plantName = plant_info.map(plant => plant.Facility_Name)
       var renewableStatus = plant_info.map(plant => plant.Renewable)
       var primaryFuel = plant_info.map(plant => plant.Primary_Fuel)
+      var year = plant_info.map(plant => plant.Year)
 
       // Initialize a stationStatusCode, which will be used as a key to access the appropriate layers, icons, and station count for layer group
       var plantType;
@@ -130,10 +135,22 @@ d3.json("/combined_plant_data").then(function (plant_info) {
         // Create a new station object with properties of both station objects
         // var plant = Object.assign({}, plantName[i], renewableStatus[i], primaryFuel[i]);
         // If a station is listed but not installed, it's coming soon
-        if (renewableStatus[i] == 'True') {
-          plantType = "RENEWABLE";
+        if (renewableStatus[i] == 'True' && year[i] == '2014-2015') {
+          plantType = "TWENTYFOURTEEN_RENEWABLE";
         }
-        else { plantType = "NONRENEWABLE"}
+        else if (renewableStatus[i] == 'True' && year[i] == '2017-2018') {
+          plantType = "TWENTYSEVENTEEN_RENEWABLE";
+        }
+        else if (renewableStatus[i] == 'True' && year[i] == '2020-2021') {
+          plantType = "TWENTYTWENTY_RENEWABLE";
+        }
+        else if (renewableStatus[i] == 'False' && year[i] == '2014-2015') {
+          plantType = "TWENTYFOURTEEN_NONRENEWABLE";
+        }
+        else if (renewableStatus[i] == 'False' && year[i] == '2017-2018') {
+          plantType = "TWENTYSEVENTEEN_NONRENEWABLE";
+        }
+        else { plantType = "TWENTYTWENTY_NONRENEWABLE"}
 
         // Update the station count
         typeCount[plantType]++;
@@ -160,8 +177,11 @@ d3.json("/combined_plant_data").then(function (plant_info) {
 // Update the legend's innerHTML with the last updated time and station count
 function updateLegend(time, stationCount) {
   document.querySelector(".legend").innerHTML = [
-    "<p>Updated: " + moment.unix(time).format("h:mm:ss A") + "</p>",
-    "<p class='renewable'>Renewable Power Plants: " + typeCount.RENEWABLE + "</p>",
-    "<p class='non-renewable'>Non-Renewable Power Plants: " + typeCount.NONRENEWABLE + "</p>"
+    "<p class='renewable'>Renewable Power Plants 2014-15: " + typeCount.TWENTYFOURTEEN_RENEWABLE + "</p>",
+    "<p class='non-renewable'>Non-Renewable Power Plants 2014-15: " + typeCount.TWENTYFOURTEEN_NONRENEWABLE + "</p>",
+    "<p class='renewable'>Renewable Power Plants 2017-18: " + typeCount.TWENTYSEVENTEEN_RENEWABLE + "</p>",
+    "<p class='non-renewable'>Non-Renewable Power Plants 2017-18: " + typeCount.TWENTYSEVENTEEN_NONRENEWABLE + "</p>",
+    "<p class='renewable'>Renewable Power Plants 2020-21: " + typeCount.TWENTYTWENTY_RENEWABLE + "</p>",
+    "<p class='non-renewable'>Non-Renewable Power Plants 2020-21: " + typeCount.TWENTYTWENTY_NONRENEWABLE + "</p>"
   ].join("");
 }
