@@ -25,48 +25,9 @@
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
 
-    <!-- Tableau Resize Function
-    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-    <script type="text/javascript">
-        var viz;
-
-        function initViz() {
-            var containerDiv = document.getElementById("vizContainer"),
-                url = "http://public.tableau.com/views/RegionalSampleWorkbook/Stocks",
-                options = {
-                    hideTabs: true
-                };
-
-            viz = new tableau.Viz(containerDiv, url, options);
-        }
-
-        function vizResize() {
-            var width = document.getElementById("resizeWidth").value;
-            var height = document.getElementById("resizeHeight").value;
-
-            viz.setFrameSize(parseInt(width, 10), parseInt(height, 10));
-        }
-    </script> -->
-
-
 </head>
 
 <body>
-
-    <!-- onload="initViz();">
-    <div id="vizContainer" style="width:800px; height:700px; overflow:auto;"></div>
-    <div id="controls" style="padding:20px;">
-        <form id="resizeForm">
-            <input type="text" id="resizeWidth" placeholder="Width">
-            <input type="text" id="resizeHeight" placeholder="Height">
-            <button type="button" onClick="vizResize();">Resize</button>
-        </form>
-    </div> -->
-
-    <!-- NAV BAR -->
-    <!-- Includes expand settings for small vs large screens -->
-    <!-- Small screens display a drop down box to display navigation options -->
-    <!-- Large screens display all navigation options individually along the nav bar -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -313,11 +274,15 @@
     <!-- Icons -->
     <script src="static/js/leaflet.extra-markers.min.js"></script>
 
+    <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
     <!-- API Key -->
     <script type="text/javascript" src="static/js/config.js"></script>
 
-    <!-- Our JavaScript -->
-    <script type="text/javascript" src="static/js/logic.js"></script>
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+
 </body>
 
 <!-- PAGE FOOTER -->

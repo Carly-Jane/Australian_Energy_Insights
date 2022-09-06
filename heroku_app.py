@@ -131,6 +131,17 @@ def index_tw_two():
     return jsonify(list_cur)
 
 # Set route
+@app.route('/combined_plant_data')
+def index_combined_plant_data():
+    # Store the each collection in a list
+    combined_data = db.Combined_Plant_Data.find()
+    
+    list_cur = list(combined_data)
+    
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
+
+# Set route
 @app.route('/population_renewable_energy')
 def index_pop_renewable_energy():
     # Store the each collection in a list
