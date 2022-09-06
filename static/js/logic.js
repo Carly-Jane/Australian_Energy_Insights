@@ -21,7 +21,7 @@ var layers = {
 // Create the map with our layers
 var map = L.map("map-id", {
   center: [-25.27, 133.77],
-  zoom: 12,
+  zoom: 2,
   layers: [
     layers.RENEWABLE,
     layers.NONRENEWABLE,
@@ -109,17 +109,17 @@ var icons = {
   // }),
 };
 
-// Perform an API call to the 2014/2015 endpoint
-d3.json("/combined_plant_data").then(function (plant_info) {
-      var plantName = plant_info.map((plant => plant.Facility_Name))
-      var renewableStatus = plant_info.map((plant => plant.Renewable))
-      var primaryFuel = plant_info.map((plant => plant.Primary_Fuel))
-
       // Create an object to keep of the number of markers in each layer
       var typeCount = {
         RENEWABLE: 0,
         NONRENEWABLE: 0
       };
+
+// Perform an API call to the 2014/2015 endpoint
+d3.json("/combined_plant_data").then(function (plant_info) {
+      var plantName = plant_info.map(plant => plant.Facility_Name)
+      var renewableStatus = plant_info.map(plant => plant.Renewable)
+      var primaryFuel = plant_info.map(plant => plant.Primary_Fuel)
 
       // Initialize a stationStatusCode, which will be used as a key to access the appropriate layers, icons, and station count for layer group
       var plantType;
@@ -130,30 +130,27 @@ d3.json("/combined_plant_data").then(function (plant_info) {
         // Create a new station object with properties of both station objects
         // var plant = Object.assign({}, plantName[i], renewableStatus[i], primaryFuel[i]);
         // If a station is listed but not installed, it's coming soon
-        if (plant = plant_info.filter(plant => plant.Renewable == 'True')) {
+        if (renewableStatus[i] == 'True') {
           plantType = "RENEWABLE";
         }
-        // If a station has no bikes available, it's empty
-        else if (plant = plant_info.filter(plant => plant.Renewable != 'True')) {
-          plantType = "NONRENEWABLE";
-        }
+        else { plantType = "NONRENEWABLE"}
 
         // Update the station count
         typeCount[plantType]++;
 
-        var plantLng = Object.assign({}, plant_info[i].Lng, plant_info[i].Lng);
-        var plantLat = Object.assign({}, plant_info[i].Lat, plant_info[i].Lat);
+        var plantLng = plant_info[i].Lng;
+        var plantLat = plant_info[i].Lat;
 
         // Create a new marker with the appropriate icon and coordinates
         var newMarker = L.marker([parseFloat(plantLat), parseFloat(plantLng)], {
           icon: icons[plantType]
         });
 
+        // Bind a popup to the marker that will  display on click. This will be rendered as HTML
+        newMarker.bindPopup(plantName[i] + "<br> Renewable: " + renewableStatus[i] + "<br>" + " Primary Fuel: " + primaryFuel[i]);
+
         // Add the new marker to the appropriate layer
         newMarker.addTo(layers[plantType]);
-
-        // Bind a popup to the marker that will  display on click. This will be rendered as HTML
-        newMarker.bindPopup(plantName + "<br> Renewable: " + renewableStatus + "<br>" + " Primary Fuel: " + primaryFuel);
       }
 
       // Call the updateLegend function, which will... update the legend!

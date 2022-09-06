@@ -8,23 +8,24 @@ from flask import (
     redirect)
 
 # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
-from flask_pymongo import PyMongo
+import pymongo
 import json
 
-from bson import _get_object_size, _raw_to_dict
+from config import username
+from config import password
 
-# from bson.json_util import ObjectId
+from bson.json_util import ObjectId
 
-username = os.getenv("username", "")
-password = os.getenv("password", "")
-API_KEY = os.getenv("API_KEY", "")
+# username = os.getenv("username", "")
+# password = os.getenv("password", "")
+# API_KEY = os.getenv("API_KEY", "")
 
-# class MyEncoder(json.JSONEncoder):
+class MyEncoder(json.JSONEncoder):
 
-#     def default(self, obj):
-#         if isinstance(obj, ObjectId):
-#             return str(obj)
-#         return super(MyEncoder, self).default(obj)
+    def default(self, obj):
+        if isinstance(obj, ObjectId):
+            return str(obj)
+        return super(MyEncoder, self).default(obj)
 
 # #################################################
 # # Flask Setup
@@ -34,126 +35,126 @@ app = Flask(__name__)
 # #################################################
 # # Database Setup
 # #################################################
-# app.json_encoder = MyEncoder
+app.json_encoder = MyEncoder
 
-# # Create connection variable
-# conn = f'mongodb+srv://{username}:{password}@energyaustralia-morgana.cmpqq0l.mongodb.net/?retryWrites=true&w=majority'
+# Create connection variable
+conn = f'mongodb+srv://{username}:{password}@energyaustralia-morgana.cmpqq0l.mongodb.net/?retryWrites=true&w=majority'
 
-# # Pass connection to the pymongo instance.
-# client = pymongo.MongoClient(conn)
+# Pass connection to the pymongo instance.
+client = pymongo.MongoClient(conn)
 
-# # Connect to a database. Will create one if not already available.
-# db = client.energy_db
+# Connect to a database. Will create one if not already available.
+db = client.energy_db
 
-# # Set route
-# @app.route('/aus_income')
-# def index_income():
-#     # Store the each collection in a list
-#     aus_income = db.Aus_Income.find()
+# Set route
+@app.route('/aus_income')
+def index_income():
+    # Store the each collection in a list
+    aus_income = db.Aus_Income.find()
     
-#     list_cur = list(aus_income)
+    list_cur = list(aus_income)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/aus_population')
-# def index_population():
-#     # Store the each collection in a list
-#     aus_population = db.Aus_Population.find()
+# Set route
+@app.route('/aus_population')
+def index_population():
+    # Store the each collection in a list
+    aus_population = db.Aus_Population.find()
     
-#     list_cur = list(aus_population)
+    list_cur = list(aus_population)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/energy_production_per_capita')
-# def index_per_capita():
-#     # Store the each collection in a list
-#     energy_production_per_capita = db.Energy_Production_Per_Capita.find()
+# Set route
+@app.route('/energy_production_per_capita')
+def index_per_capita():
+    # Store the each collection in a list
+    energy_production_per_capita = db.Energy_Production_Per_Capita.find()
     
-#     list_cur = list(energy_production_per_capita)
+    list_cur = list(energy_production_per_capita)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/energy_production')
-# def index_energy_production():
-#     # Store the each collection in a list
-#     energy_production = db.Energy_Progression.find()
+# Set route
+@app.route('/energy_production')
+def index_energy_production():
+    # Store the each collection in a list
+    energy_production = db.Energy_Progression.find()
     
-#     list_cur = list(energy_production)
+    list_cur = list(energy_production)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/income_renewable_energy')
-# def index_renewable_energy():
-#     # Store the each collection in a list
-#     income_renewable_energy = db.Income_Renewable_Energy.find()    
+# Set route
+@app.route('/income_renewable_energy')
+def index_renewable_energy():
+    # Store the each collection in a list
+    income_renewable_energy = db.Income_Renewable_Energy.find()    
     
-#     list_cur = list(income_renewable_energy)
+    list_cur = list(income_renewable_energy)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/fourteen_fifteen')
-# def index_four_five():
-#     # Store the each collection in a list
-#     fourteen_fifteen = db.Fourteen_Fifteen_Energy_Production.find()
+# Set route
+@app.route('/fourteen_fifteen')
+def index_four_five():
+    # Store the each collection in a list
+    fourteen_fifteen = db.Fourteen_Fifteen_Energy_Production.find()
     
-#     list_cur = list(fourteen_fifteen)
+    list_cur = list(fourteen_fifteen)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/seventeen_eighteen')
-# def index_seven_eight():
-#     # Store the each collection in a list
-#     seventeen_eighteen = db.Seventeen_Eighteen_Energy_Production.find()
+# Set route
+@app.route('/seventeen_eighteen')
+def index_seven_eight():
+    # Store the each collection in a list
+    seventeen_eighteen = db.Seventeen_Eighteen_Energy_Production.find()
     
-#     list_cur = list(seventeen_eighteen)
+    list_cur = list(seventeen_eighteen)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/twenty_twentyone')
-# def index_tw_two():
-#     # Store the each collection in a list
-#     twenty_twentyone = db.Twenty_Twentyone_Energy_Production.find()
+# Set route
+@app.route('/twenty_twentyone')
+def index_tw_two():
+    # Store the each collection in a list
+    twenty_twentyone = db.Twenty_Twentyone_Energy_Production.find()
     
-#     list_cur = list(twenty_twentyone)
+    list_cur = list(twenty_twentyone)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/combined_plant_data')
-# def index_combined_plant_data():
-#     # Store the each collection in a list
-#     combined_data = db.Combined_Plant_Data.find()
+# Set route
+@app.route('/combined_plant_data')
+def index_combined_plant_data():
+    # Store the each collection in a list
+    combined_data = db.Combined_Plant_Data.find()
     
-#     list_cur = list(combined_data)
+    list_cur = list(combined_data)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
-# # Set route
-# @app.route('/population_renewable_energy')
-# def index_pop_renewable_energy():
-#     # Store the each collection in a list
-#     population_renewable_energy = db.Population_Renewable_Energy.find()
+# Set route
+@app.route('/population_renewable_energy')
+def index_pop_renewable_energy():
+    # Store the each collection in a list
+    population_renewable_energy = db.Population_Renewable_Energy.find()
     
-#     list_cur = list(population_renewable_energy)
+    list_cur = list(population_renewable_energy)
     
-#     # Return the template with the teams list passed in
-#     return jsonify(list_cur)
+    # Return the template with the teams list passed in
+    return jsonify(list_cur)
 
 # create route that renders index.html template
 @app.route("/")
