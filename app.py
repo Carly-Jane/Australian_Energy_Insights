@@ -7,24 +7,22 @@ from flask import (
     request,
     redirect)
 
-# # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
-# import pymongo
-# import json
+# Import our pymongo library, which lets us connect our Flask app to our Mongo database.
+import pymongo
+import json
 
-# from bson.json_util import ObjectId
-# # from config import password
-# # from config import username
+from bson.json_util import ObjectId
 
-# username = os.getenv("username", "")
-# password = os.getenv("password", "")
-# API_KEY = os.getenv("API_KEY", "")
+username = os.getenv("username", "")
+password = os.getenv("password", "")
+API_KEY = os.getenv("API_KEY", "")
 
-# class MyEncoder(json.JSONEncoder):
+class MyEncoder(json.JSONEncoder):
 
-#     def default(self, obj):
-#         if isinstance(obj, ObjectId):
-#             return str(obj)
-#         return super(MyEncoder, self).default(obj)
+    def default(self, obj):
+        if isinstance(obj, ObjectId):
+            return str(obj)
+        return super(MyEncoder, self).default(obj)
 
 # #################################################
 # # Flask Setup
