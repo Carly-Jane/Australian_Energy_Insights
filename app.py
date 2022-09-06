@@ -8,7 +8,7 @@ from flask import (
     redirect)
 
 # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
-# import pymongo
+from flask_pymongo import PyMongo
 import json
 
 # from bson.json_util import ObjectId
