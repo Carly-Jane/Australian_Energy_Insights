@@ -9,12 +9,15 @@ from flask import (
 
 # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
 import pymongo
-from pymongo import MongoClient
 import json
 
 from bson.json_util import ObjectId
-from config import password
-from config import username
+# from config import password
+# from config import username
+
+username = os.getenv("username", "")
+password = os.getenv("password", "")
+API_KEY = os.getenv("API_KEY", "")
 
 class MyEncoder(json.JSONEncoder):
 
